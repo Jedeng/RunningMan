@@ -30,6 +30,12 @@ singleton_interface(RMUserInfo)
 @property (nonatomic, copy) NSString *sinaToken;
 @property (nonatomic, assign,getter=isSinaLogin) BOOL sinaLogin;
 
+/** 判断用户是否已登录 */
+@property (nonatomic, assign,getter=isOnLine) BOOL OnLine;
+
+/** 用户数据的沙盒读写 */
+- (void) saveUserInfoToSandBox;
+- (void) loadUserInfoFromSandBox;
 
 
 @end

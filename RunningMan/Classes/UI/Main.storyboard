@@ -8,7 +8,7 @@
         <!--好友-->
         <scene sceneID="hZC-qV-Nb5">
             <objects>
-                <viewController id="5ol-hV-Nci" userLabel="好友" sceneMemberID="viewController">
+                <viewController id="5ol-hV-Nci" userLabel="好友" customClass="RMSportVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sSC-20-0jH"/>
                         <viewControllerLayoutGuide type="bottom" id="GxU-aK-htI"/>
@@ -19,7 +19,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FZf-Tm-w4s"/>
+                    <navigationItem key="navigationItem" title="运动" id="FZf-Tm-w4s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHc-br-Kgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +39,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kUN-LI-1y7"/>
+                    <navigationItem key="navigationItem" title="朋友圈" id="kUN-LI-1y7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlJ-iL-KIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +63,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRa-x6-yKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-485" y="625"/>
+            <point key="canvasLocation" x="-417" y="749"/>
         </scene>
         <!--圈子-->
         <scene sceneID="Cwc-AF-uQX">
@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="299" y="-416"/>
         </scene>
-        <!--Friend TableVC-->
+        <!--好友列表-->
         <scene sceneID="gHF-ec-kqX">
             <objects>
                 <tableViewController storyboardIdentifier="friendVC" id="vqT-Nd-yMn" customClass="RMFriendTableVC" sceneMemberID="viewController">
@@ -205,13 +205,26 @@
                             <outlet property="delegate" destination="vqT-Nd-yMn" id="mY3-p9-0S4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dS0-Oz-Dzm">
+                    <navigationItem key="navigationItem" title="好友列表" id="dS0-Oz-Dzm">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="OvT-11-kBB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LNM-ts-7vJ">
+                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="myPofilesBtn:" destination="vqT-Nd-yMn" eventType="touchUpInside" id="nHN-9Q-8RZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="添加" id="gUE-56-J4D"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myPofilesBtn" destination="LNM-ts-7vJ" id="jVo-QB-rSJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIg-nh-TNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="-416"/>
+            <point key="canvasLocation" x="1055" y="-482"/>
         </scene>
     </scenes>
     <resources>

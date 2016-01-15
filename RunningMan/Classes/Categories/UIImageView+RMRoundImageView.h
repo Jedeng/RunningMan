@@ -1,5 +1,5 @@
 //
-//  RMFriendTableVC.h
+//  UIImageView+RMRoundImageView.h
 //  RunningMan
 //
 //  Created by 纵使寂寞开成海 on 16/1/15.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIImageView (RMRoundImageView)
 
-
-
-
-@interface RMFriendTableVC : UITableViewController
+- (void) setRoundLayer;
 
 @end

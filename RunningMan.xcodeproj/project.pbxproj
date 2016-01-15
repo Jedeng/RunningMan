@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B822B5451C49269A006F2EF5 /* libstdc++.tbd */; };
 		B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */; };
 		B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3241C48F5EA00E3F74A /* RMFriendCell.m */; };
 		B856E3291C48FC6700E3F74A /* RMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3281C48FC6700E3F74A /* RMUserInfo.m */; };
@@ -165,6 +166,11 @@
 		B856E5461C48FFB100E3F74A /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B856E5451C48FFB100E3F74A /* libxml2.tbd */; };
 		B856E5481C49019400E3F74A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B856E5471C49019400E3F74A /* libresolv.tbd */; };
 		B856E54B1C49029600E3F74A /* RMXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E54A1C49029600E3F74A /* RMXMPPTool.m */; };
+		B856E54E1C49071600E3F74A /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E54D1C49071600E3F74A /* NSString+md5.m */; };
+		B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5501C49076D00E3F74A /* UIImageView+RMRoundImageView.m */; };
+		B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5571C49111400E3F74A /* RMMyProfilesVC.m */; };
+		B856E55A1C49122B00E3F74A /* MyPofiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B856E5591C49122B00E3F74A /* MyPofiles.storyboard */; };
+		B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E55F1C491B9F00E3F74A /* RMSportVC.m */; };
 		B8E16B561C48CC7E0029B86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B551C48CC7E0029B86C /* Assets.xcassets */; };
 		B8E16B871C48DFA20029B86C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16B851C48DFA20029B86C /* AppDelegate.m */; };
 		B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */; };
@@ -183,6 +189,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B822B5451C49269A006F2EF5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		B856E31D1C48F52500E3F74A /* RMFriendTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendTableVC.h; sourceTree = "<group>"; };
 		B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMFriendTableVC.m; sourceTree = "<group>"; };
 		B856E3231C48F5EA00E3F74A /* RMFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendCell.h; sourceTree = "<group>"; };
@@ -510,6 +517,15 @@
 		B856E5471C49019400E3F74A /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		B856E5491C49029600E3F74A /* RMXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMXMPPTool.h; sourceTree = "<group>"; };
 		B856E54A1C49029600E3F74A /* RMXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMXMPPTool.m; sourceTree = "<group>"; };
+		B856E54C1C49071600E3F74A /* NSString+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
+		B856E54D1C49071600E3F74A /* NSString+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
+		B856E54F1C49076D00E3F74A /* UIImageView+RMRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RMRoundImageView.h"; sourceTree = "<group>"; };
+		B856E5501C49076D00E3F74A /* UIImageView+RMRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RMRoundImageView.m"; sourceTree = "<group>"; };
+		B856E5561C49111400E3F74A /* RMMyProfilesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMyProfilesVC.h; sourceTree = "<group>"; };
+		B856E5571C49111400E3F74A /* RMMyProfilesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMyProfilesVC.m; sourceTree = "<group>"; };
+		B856E5591C49122B00E3F74A /* MyPofiles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPofiles.storyboard; sourceTree = "<group>"; };
+		B856E55E1C491B9F00E3F74A /* RMSportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportVC.h; sourceTree = "<group>"; };
+		B856E55F1C491B9F00E3F74A /* RMSportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportVC.m; sourceTree = "<group>"; };
 		B8E16B461C48CC7E0029B86C /* RunningMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E16B551C48CC7E0029B86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B8E16B5A1C48CC7E0029B86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -614,6 +630,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */,
 				B856E5481C49019400E3F74A /* libresolv.tbd in Frameworks */,
 				B856E5461C48FFB100E3F74A /* libxml2.tbd in Frameworks */,
 				B8E16BEC1C48EA0D0029B86C /* mybaidu.a in Frameworks */,
@@ -1497,9 +1514,66 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
+		B856E5521C4910E300E3F74A /* Myprofiles */ = {
+			isa = PBXGroup;
+			children = (
+				B856E5531C4910E300E3F74A /* Controller */,
+				B856E5541C4910E300E3F74A /* Model */,
+				B856E5551C4910E300E3F74A /* View */,
+			);
+			path = Myprofiles;
+			sourceTree = "<group>";
+		};
+		B856E5531C4910E300E3F74A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B856E5561C49111400E3F74A /* RMMyProfilesVC.h */,
+				B856E5571C49111400E3F74A /* RMMyProfilesVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B856E5541C4910E300E3F74A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B856E5551C4910E300E3F74A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B856E55B1C491B8100E3F74A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B856E55E1C491B9F00E3F74A /* RMSportVC.h */,
+				B856E55F1C491B9F00E3F74A /* RMSportVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B856E55C1C491B8100E3F74A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B856E55D1C491B8100E3F74A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B8E16B3D1C48CC7D0029B86C = {
 			isa = PBXGroup;
 			children = (
+				B822B5451C49269A006F2EF5 /* libstdc++.tbd */,
 				B856E5471C49019400E3F74A /* libresolv.tbd */,
 				B856E5451C48FFB100E3F74A /* libxml2.tbd */,
 				B8E16B481C48CC7E0029B86C /* RunningMan */,
@@ -1550,6 +1624,7 @@
 			children = (
 				B8E16B951C48DFA80029B86C /* UI */,
 				B8E16B8F1C48DFA80029B86C /* Main */,
+				B856E5521C4910E300E3F74A /* Myprofiles */,
 				B8E16B8E1C48DFA80029B86C /* Login */,
 				B8E16B911C48DFA80029B86C /* Register */,
 				B8E16B8C1C48DFA80029B86C /* Friends(联系人) */,
@@ -1566,6 +1641,10 @@
 		B8E16B8A1C48DFA80029B86C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				B856E54C1C49071600E3F74A /* NSString+md5.h */,
+				B856E54D1C49071600E3F74A /* NSString+md5.m */,
+				B856E54F1C49076D00E3F74A /* UIImageView+RMRoundImageView.h */,
+				B856E5501C49076D00E3F74A /* UIImageView+RMRoundImageView.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1625,6 +1704,9 @@
 		B8E16B921C48DFA80029B86C /* Sport */ = {
 			isa = PBXGroup;
 			children = (
+				B856E55B1C491B8100E3F74A /* Controller */,
+				B856E55C1C491B8100E3F74A /* Model */,
+				B856E55D1C491B8100E3F74A /* View */,
 			);
 			path = Sport;
 			sourceTree = "<group>";
@@ -1653,6 +1735,7 @@
 			children = (
 				B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */,
 				B8E16B971C48E1A10029B86C /* Main.storyboard */,
+				B856E5591C49122B00E3F74A /* MyPofiles.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1848,6 +1931,7 @@
 				B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */,
 				B856E53D1C48FD5F00E3F74A /* README.txt in Resources */,
 				B8E16BF61C48EA5D0029B86C /* MBProgressHUD.bundle in Resources */,
+				B856E55A1C49122B00E3F74A /* MyPofiles.storyboard in Resources */,
 				B856E5421C48FD5F00E3F74A /* build-libidn.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1871,6 +1955,7 @@
 				B856E36F1C48FD5300E3F74A /* SDWebImagePrefetcher.m in Sources */,
 				B856E4DF1C48FD5F00E3F74A /* XMPPUserCoreDataStorageObject.m in Sources */,
 				B856E52B1C48FD5F00E3F74A /* NSXMLElement+XEP_0297.m in Sources */,
+				B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */,
 				B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */,
 				B856E3691C48FD5300E3F74A /* SDImageCache.m in Sources */,
 				B856E5091C48FD5F00E3F74A /* XMPPPubSub.m in Sources */,
@@ -1965,6 +2050,7 @@
 				B856E5011C48FD5F00E3F74A /* XMPPvCardTempBase.m in Sources */,
 				B856E4F91C48FD5F00E3F74A /* XMPPvCard.xcdatamodeld in Sources */,
 				B856E4D71C48FD5F00E3F74A /* XMPPCoreDataStorage.m in Sources */,
+				B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */,
 				B856E51C1C48FD5F00E3F74A /* XMPPMessageArchiving.m in Sources */,
 				B856E53A1C48FD5F00E3F74A /* DDTTYLogger.m in Sources */,
 				B856E4C41C48FD5F00E3F74A /* XMPPAnonymousAuthentication.m in Sources */,
@@ -1990,7 +2076,9 @@
 				B856E4D31C48FD5F00E3F74A /* XMPPParser.m in Sources */,
 				B856E4EE1C48FD5F00E3F74A /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				B856E5401C48FD5F00E3F74A /* DDXMLElement.m in Sources */,
+				B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */,
 				B856E50B1C48FD5F00E3F74A /* XMPPIQ+XEP_0066.m in Sources */,
+				B856E54E1C49071600E3F74A /* NSString+md5.m in Sources */,
 				B856E5171C48FD5F00E3F74A /* XMPPCapabilities.m in Sources */,
 				B856E5351C48FD5F00E3F74A /* GCDAsyncSocket.m in Sources */,
 				B856E36C1C48FD5300E3F74A /* SDWebImageDownloader.m in Sources */,
@@ -2110,6 +2198,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -2131,6 +2220,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;

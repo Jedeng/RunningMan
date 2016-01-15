@@ -1,5 +1,5 @@
 //
-//  RMFriendTableVC.h
+//  MyProfilesVC.h
 //  RunningMan
 //
 //  Created by 纵使寂寞开成海 on 16/1/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-
-
-@interface RMFriendTableVC : UITableViewController
+@interface RMMyProfilesVC : UIViewController
 
 @end

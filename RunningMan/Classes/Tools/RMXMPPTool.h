@@ -31,7 +31,7 @@ typedef void(^RMResultBlock)
 
 @interface RMXMPPTool : NSObject
 
-
+singleton_interface(RMXMPPTool)
 
 #pragma mark - 链接服务器类
 /** 负责和服务器经行交互的主要对象 */

@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RMMyProfilesVC.h"
 #import "MMDrawerController.h"  /** 侧滑三方 */
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BMKGeneralDelegate>
 @property (nonatomic, strong) MMDrawerController *drawerController;
 @end
 
@@ -36,6 +36,13 @@
         [self setupNavigationController];
     }
     
+    /** 统一导航栏风格 */
+    [self setThem];
+    
+    /** 地图验证 */
+    _manager = [[BMKMapManager alloc]init];
+    [_manager start:@"2mzXGZnNcV98dd8Mg4pNslRr" generalDelegate:self];
+    
     return YES;
 }
 
@@ -46,9 +53,8 @@
     UIViewController *mainVC = [MainSB instantiateInitialViewController];
     
     /** 左边视图实例对象 */
-//    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofile" bundle:nil];
-//    MyPofileViewController *myPofileVC = [myPofileSB instantiateInitialViewController];
-    UIViewController *leftVC = [[UIViewController alloc] init];
+    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofiles" bundle:nil];
+    RMMyProfilesVC *leftVC = [myPofileSB instantiateInitialViewController];
     
     /** 使用抽屉第三方框架绑定视图控制器 */
     self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:mainVC leftDrawerViewController:leftVC];
@@ -65,6 +71,14 @@
     _window.rootViewController = _drawerController;
 }
 
+/** 统一导航栏风格 */
+- (void) setThem
+{
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage imageNamed:@"矩形"] forBarMetrics:UIBarMetricsDefault];
+    bar.barStyle = UIBarStyleBlack;
+    bar.tintColor = [UIColor whiteColor];
+}
 
 
 

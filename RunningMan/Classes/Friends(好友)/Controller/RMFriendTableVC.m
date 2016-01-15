@@ -7,21 +7,74 @@
 //
 
 #import "RMFriendTableVC.h"
+#import "RMUserInfo.h"
+#import "RMXMPPTool.h"
+#import "RMFriendCell.h"
+#import "UIImageView+RMRoundImageView.h"
+#import "UIViewController+MMDrawerController.h"
+//#import "<#header#>"
 
-@interface RMFriendTableVC ()
+
+
+/** 结果控制器代理 */
+@interface RMFriendTableVC ()<NSFetchedResultsControllerDelegate>
+
+/** 利用结果控制器代理处理数据,可以实现随时监听数据变更 */
+@property (nonatomic, strong) NSFetchedResultsController *fetchController;
+
+@property (weak, nonatomic) IBOutlet UIButton *myPofilesBtn;
 
 @end
 
 @implementation RMFriendTableVC
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /** 加载好友列表: */
+//    [self loadFriendsList];
+}
+
+- (void) loadFriendsList
+{
+    /** 获取上下文对象 */
+    NSManagedObjectContext *context = [[RMXMPPTool sharedRMXMPPTool].xmppRosterStore mainThreadManagedObjectContext];
+    
+    /** 关联实体 */
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XMPPUserCoreDataStorageObject"];
+    
+    /** 设置过滤条件, predicate: 谓语,叙述语,断定,  此处可以当做过滤用... */
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"streamBareJidStr = %@",
+                                                                                                 [RMUserInfo sharedRMUserInfo].jidStr];
+    
+    request.predicate = predicate;
+    
+    /** 排序 */
+    NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
+    request.sortDescriptors = @[sortDes];
+    
+    /** 获取数据 */
+    self.fetchController = [[NSFetchedResultsController alloc] initWithFetchRequest: request
+                                                                                          managedObjectContext: context
+                                                                                             sectionNameKeyPath: nil
+                                                                                                            cacheName: nil];
+    
+    self.fetchController.delegate = self;
+
+    NSError *error = nil;
+    [self.fetchController performFetch:&error];
+    if (error)
+    {
+        MYLog(@"好友列表加载失败:%@",error);
+    }
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.myPofilesBtn setBackgroundImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,68 +84,96 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if ([RMUserInfo sharedRMUserInfo].isOnLine)
+    {
+        return self.fetchController.fetchedObjects.count;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    if ([RMUserInfo sharedRMUserInfo].isOnLine)
+    {
+        static NSString *identifier = @"friendCell";
+        RMFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+        
+        [cell.headerImage setRoundLayer];
+        
+        /** 从上面得到的对象中解析出朋友数据 */
+        XMPPUserCoreDataStorageObject *friend = self.fetchController.fetchedObjects[indexPath.row];
+        
+        NSData *imageData = [[RMXMPPTool sharedRMXMPPTool].xmppvCardAvar photoDataForJID:friend.jid];
+        
+        if (imageData)
+        {
+            cell.headerImage.image = [UIImage imageWithData:imageData];
+        }
+        else
+        {
+            cell.headerImage.image = [UIImage imageNamed:@"icon1"];
+        }
+        
+        cell.nikeNameLabel.text = friend.jidStr;
     
-    // Configure the cell...
-    
-    return cell;
+        switch ([friend.sectionNum intValue])
+        {
+            case 0:
+                cell.onLineLabel.text = @"在线";
+                break;
+            case 1:
+                cell.onLineLabel.text = @"离开";
+                break;
+            default:
+                cell.onLineLabel.text = @"离线";
+                break;
+        }
+
+        return cell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        return cell;
+    }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+/** 行高 */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+/** 添加删除模式 */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XMPPUserCoreDataStorageObject *friend = self.fetchController.fetchedObjects[indexPath.row];
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        /** 删除模式下,删除好友 */
+        [[RMXMPPTool sharedRMXMPPTool].xmppRoster removeUser:friend.jid];
+    }
+    else
+    {
+        
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+/** 数据变化 */
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+
+- (IBAction)myPofilesBtn:(UIButton *)sender
+{
+    [[self mm_drawerController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+#pragma mark - 朋友界面与聊天界面之间跳转的正向传值
 @end
