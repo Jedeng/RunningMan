@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "MMDrawerController.h"  /** 侧滑三方 */
 
+@interface AppDelegate ()
+@property (nonatomic, strong) MMDrawerController *drawerController;
 @end
 
 @implementation AppDelegate
@@ -21,8 +23,50 @@
     
     /** This is a test */
     
+    _isNotFirst = [[NSUserDefaults standardUserDefaults] boolForKey:@"isNotFirst"];
+    
+    if (_isNotFirst)
+    {
+        /** 暂时不会进入 */
+        [self setupNavigationController];
+    }
+    else
+    {
+        /** 注释下面代码并 添加启动页面 */
+        [self setupNavigationController];
+    }
+    
     return YES;
 }
+
+- (void)setupNavigationController
+{
+    /** 主视图实例对象 */
+    UIStoryboard *MainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mainVC = [MainSB instantiateInitialViewController];
+    
+    /** 左边视图实例对象 */
+//    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofile" bundle:nil];
+//    MyPofileViewController *myPofileVC = [myPofileSB instantiateInitialViewController];
+    UIViewController *leftVC = [[UIViewController alloc] init];
+    
+    /** 使用抽屉第三方框架绑定视图控制器 */
+    self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:mainVC leftDrawerViewController:leftVC];
+    [self.drawerController setShowsShadow:NO];
+    
+    /** 设置滑动边距大小 */
+    self.drawerController.maximumLeftDrawerWidth = 280;
+    self.drawerController.statusBarViewBackgroundColor = [UIColor redColor];
+    
+    /** 设置抽屉模式打开和关闭的手势监听模式 */
+    self.drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    self.drawerController.closeDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    
+    _window.rootViewController = _drawerController;
+}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
