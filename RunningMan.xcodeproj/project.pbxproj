@@ -173,6 +173,17 @@
 		B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E55F1C491B9F00E3F74A /* RMSportVC.m */; };
 		B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3141C4A142700125004 /* RMSportTopic.m */; };
 		B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF31A1C4A1A6400125004 /* RMSetViewController.m */; };
+		B88EF3241C4A2B0F00125004 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */; };
+		B88EF3291C4A2B4200125004 /* RMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3271C4A2B4200125004 /* RMLoginViewController.m */; };
+		B88EF32E1C4A2B6900125004 /* RMRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */; };
+		B88EF3311C4A2B8B00125004 /* RMWebRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3301C4A2B8B00125004 /* RMWebRegister.m */; };
+		B88EF3331C4A2C1300125004 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3321C4A2C1300125004 /* libz.tbd */; };
+		B88EF3351C4A2C2300125004 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3341C4A2C2300125004 /* libicucore.tbd */; };
+		B88EF3371C4A2C3000125004 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3361C4A2C3000125004 /* MessageUI.framework */; };
+		B88EF3391C4A2C3B00125004 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3381C4A2C3B00125004 /* JavaScriptCore.framework */; };
+		B88EF3491C4A2EC100125004 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B88EF3441C4A2EC100125004 /* SMS_SDKLocalizable.strings */; };
+		B88EF34A1C4A2EC100125004 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3461C4A2EC100125004 /* MOBFoundation.framework */; };
+		B88EF34B1C4A2EC100125004 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3471C4A2EC100125004 /* SMS_SDK.framework */; };
 		B8E16B561C48CC7E0029B86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B551C48CC7E0029B86C /* Assets.xcassets */; };
 		B8E16B871C48DFA20029B86C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16B851C48DFA20029B86C /* AppDelegate.m */; };
 		B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */; };
@@ -532,6 +543,21 @@
 		B88EF3141C4A142700125004 /* RMSportTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportTopic.m; sourceTree = "<group>"; };
 		B88EF3191C4A1A6400125004 /* RMSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetViewController.h; sourceTree = "<group>"; };
 		B88EF31A1C4A1A6400125004 /* RMSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetViewController.m; sourceTree = "<group>"; };
+		B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
+		B88EF3261C4A2B4200125004 /* RMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLoginViewController.h; sourceTree = "<group>"; };
+		B88EF3271C4A2B4200125004 /* RMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLoginViewController.m; sourceTree = "<group>"; };
+		B88EF32B1C4A2B6900125004 /* RMRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRegisterTableViewController.h; sourceTree = "<group>"; };
+		B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRegisterTableViewController.m; sourceTree = "<group>"; };
+		B88EF32F1C4A2B8B00125004 /* RMWebRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWebRegister.h; sourceTree = "<group>"; };
+		B88EF3301C4A2B8B00125004 /* RMWebRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWebRegister.m; sourceTree = "<group>"; };
+		B88EF3321C4A2C1300125004 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B88EF3341C4A2C2300125004 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		B88EF3361C4A2C3000125004 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B88EF3381C4A2C3B00125004 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B88EF3451C4A2EC100125004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		B88EF3461C4A2EC100125004 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		B88EF3471C4A2EC100125004 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		B88EF3481C4A2EC100125004 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		B8E16B461C48CC7E0029B86C /* RunningMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E16B551C48CC7E0029B86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B8E16B5A1C48CC7E0029B86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -637,6 +663,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */,
+				B88EF34B1C4A2EC100125004 /* SMS_SDK.framework in Frameworks */,
+				B88EF3391C4A2C3B00125004 /* JavaScriptCore.framework in Frameworks */,
+				B88EF34A1C4A2EC100125004 /* MOBFoundation.framework in Frameworks */,
+				B88EF3371C4A2C3000125004 /* MessageUI.framework in Frameworks */,
+				B88EF3351C4A2C2300125004 /* libicucore.tbd in Frameworks */,
+				B88EF3331C4A2C1300125004 /* libz.tbd in Frameworks */,
 				B856E5481C49019400E3F74A /* libresolv.tbd in Frameworks */,
 				B856E5461C48FFB100E3F74A /* libxml2.tbd in Frameworks */,
 				B8E16BEC1C48EA0D0029B86C /* mybaidu.a in Frameworks */,
@@ -1601,6 +1633,48 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B88EF3251C4A2B4200125004 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B88EF3261C4A2B4200125004 /* RMLoginViewController.h */,
+				B88EF3271C4A2B4200125004 /* RMLoginViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B88EF3281C4A2B4200125004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B88EF32A1C4A2B6900125004 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B88EF32B1C4A2B6900125004 /* RMRegisterTableViewController.h */,
+				B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B88EF32D1C4A2B6900125004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B88EF3431C4A2EC100125004 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				B88EF3441C4A2EC100125004 /* SMS_SDKLocalizable.strings */,
+				B88EF3461C4A2EC100125004 /* MOBFoundation.framework */,
+				B88EF3471C4A2EC100125004 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 		B8E16B3D1C48CC7D0029B86C = {
 			isa = PBXGroup;
 			children = (
@@ -1680,6 +1754,10 @@
 		B8E16B8B1C48DFA80029B86C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B88EF3381C4A2C3B00125004 /* JavaScriptCore.framework */,
+				B88EF3361C4A2C3000125004 /* MessageUI.framework */,
+				B88EF3341C4A2C2300125004 /* libicucore.tbd */,
+				B88EF3321C4A2C1300125004 /* libz.tbd */,
 				B822B5451C49269A006F2EF5 /* libstdc++.tbd */,
 				B856E5471C49019400E3F74A /* libresolv.tbd */,
 				B856E5451C48FFB100E3F74A /* libxml2.tbd */,
@@ -1701,6 +1779,7 @@
 		B8E16B8D1C48DFA80029B86C /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				B88EF3431C4A2EC100125004 /* SMS_SDK */,
 				B856E3761C48FD5F00E3F74A /* XMPP */,
 				B856E3471C48FD5300E3F74A /* SDWebImage */,
 				B856E32A1C48FD4900E3F74A /* AFNetworking */,
@@ -1714,6 +1793,8 @@
 		B8E16B8E1C48DFA80029B86C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B88EF3251C4A2B4200125004 /* ViewControllers */,
+				B88EF3281C4A2B4200125004 /* Views */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1728,6 +1809,8 @@
 		B8E16B911C48DFA80029B86C /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				B88EF32A1C4A2B6900125004 /* ViewControllers */,
+				B88EF32D1C4A2B6900125004 /* Views */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1760,6 +1843,8 @@
 				B856E3281C48FC6700E3F74A /* RMUserInfo.m */,
 				B856E5491C49029600E3F74A /* RMXMPPTool.h */,
 				B856E54A1C49029600E3F74A /* RMXMPPTool.m */,
+				B88EF32F1C4A2B8B00125004 /* RMWebRegister.h */,
+				B88EF3301C4A2B8B00125004 /* RMWebRegister.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1769,6 +1854,7 @@
 			children = (
 				B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */,
 				B8E16B971C48E1A10029B86C /* Main.storyboard */,
+				B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */,
 				B856E5591C49122B00E3F74A /* MyPofiles.storyboard */,
 			);
 			path = UI;
@@ -1942,6 +2028,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B8E16B3D1C48CC7D0029B86C;
 			productRefGroup = B8E16B471C48CC7E0029B86C /* Products */;
@@ -1960,7 +2047,9 @@
 			files = (
 				B8E16B991C48E1A10029B86C /* Main.storyboard in Resources */,
 				B8E16BEE1C48EA0E0029B86C /* mapapi.bundle in Resources */,
+				B88EF3491C4A2EC100125004 /* SMS_SDKLocalizable.strings in Resources */,
 				B8E16B561C48CC7E0029B86C /* Assets.xcassets in Resources */,
+				B88EF3241C4A2B0F00125004 /* LoginAndRegister.storyboard in Resources */,
 				B8E16BED1C48EA0E0029B86C /* readme.txt in Resources */,
 				B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */,
 				B856E53D1C48FD5F00E3F74A /* README.txt in Resources */,
@@ -2098,6 +2187,7 @@
 				B856E5031C48FD5F00E3F74A /* XMPPvCardTempLabel.m in Sources */,
 				B856E52A1C48FD5F00E3F74A /* XMPPMessage+XEP_0224.m in Sources */,
 				B856E4FD1C48FD5F00E3F74A /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
+				B88EF3291C4A2B4200125004 /* RMLoginViewController.m in Sources */,
 				B856E3441C48FD4900E3F74A /* AFURLRequestSerialization.m in Sources */,
 				B856E3431C48FD4900E3F74A /* AFURLConnectionOperation.m in Sources */,
 				B856E33F1C48FD4900E3F74A /* AFHTTPRequestOperationManager.m in Sources */,
@@ -2112,6 +2202,7 @@
 				B856E4D31C48FD5F00E3F74A /* XMPPParser.m in Sources */,
 				B856E4EE1C48FD5F00E3F74A /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				B856E5401C48FD5F00E3F74A /* DDXMLElement.m in Sources */,
+				B88EF32E1C4A2B6900125004 /* RMRegisterTableViewController.m in Sources */,
 				B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */,
 				B856E50B1C48FD5F00E3F74A /* XMPPIQ+XEP_0066.m in Sources */,
 				B856E54E1C49071600E3F74A /* NSString+md5.m in Sources */,
@@ -2131,6 +2222,7 @@
 				B856E5151C48FD5F00E3F74A /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				B856E5381C48FD5F00E3F74A /* DDFileLogger.m in Sources */,
 				B856E3291C48FC6700E3F74A /* RMUserInfo.m in Sources */,
+				B88EF3311C4A2B8B00125004 /* RMWebRegister.m in Sources */,
 				B856E52E1C48FD5F00E3F74A /* NSXMLElement+XEP_0335.m in Sources */,
 				B856E4FA1C48FD5F00E3F74A /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				B856E5221C48FD5F00E3F74A /* XMPPBlocking.m in Sources */,
@@ -2148,6 +2240,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B88EF3441C4A2EC100125004 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B88EF3451C4A2EC100125004 /* en */,
+				B88EF3481C4A2EC100125004 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B8E16B5B1C48CC7E0029B86C /* Debug */ = {
@@ -2235,6 +2339,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RunningMan/Classes/Lib/SMS_SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -2257,6 +2365,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RunningMan/Classes/Lib/SMS_SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;

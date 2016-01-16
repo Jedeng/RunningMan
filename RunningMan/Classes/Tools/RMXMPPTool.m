@@ -79,7 +79,7 @@ singleton_implementation(RMXMPPTool)
     }
     else
     {
-        uname = [RMUserInfo sharedRMUserInfo].userNmae;
+        uname = [RMUserInfo sharedRMUserInfo].userName;
     }
     XMPPJID *myJid = [XMPPJID jidWithUser:uname domain:RMXMPPDOMAIN resource:@"iphone"];
     self.xmppStream.myJID = myJid;

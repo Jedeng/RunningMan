@@ -55,14 +55,14 @@
 
 - (IBAction)logoutBtn:(id)sender
 {
-    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandBox];
+    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
     [[RMXMPPTool sharedRMXMPPTool] sedOffLine];
     [RMUserInfo sharedRMUserInfo].jidStr = nil;
     
     if ([RMUserInfo sharedRMUserInfo].sinaLogin)
     {
         [RMUserInfo sharedRMUserInfo].sinaLogin = NO;
-        [RMUserInfo sharedRMUserInfo].userNmae = nil;
+        [RMUserInfo sharedRMUserInfo].userName = nil;
     }
     
     UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

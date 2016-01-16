@@ -18,5 +18,7 @@
 
 @property (nonatomic, strong) BMKMapManager *manager;
 
+- (void) setupNavigationController;
+
 @end
 

@@ -20,6 +20,7 @@
 typedef enum
 {
     RMXMPPResultTypeLoginSuccess,
+    RMXMPPResultTypeLoginFailure,
     RMXMPPResultTypeLoginFaild,
     RMXMPPResultTypeNetError,
     RMXMPPResultTypeRegisterSuccess,

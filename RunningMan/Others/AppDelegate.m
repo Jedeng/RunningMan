@@ -8,7 +8,14 @@
 
 #import "AppDelegate.h"
 #import "RMMyProfilesVC.h"
+#import "RMUserInfo.h"
+
 #import "MMDrawerController.h"  /** 侧滑三方 */
+
+/**  手机短信验证注册 */
+#import <SMS_SDK/SMSSDK.h>
+#define appKey    @"e8a9b25abf88"
+#define appSecret @"d5fc7fd3604b73c27f3156be12d7525b"
 
 @interface AppDelegate ()<BMKGeneralDelegate>
 @property (nonatomic, strong) MMDrawerController *drawerController;
@@ -20,20 +27,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    /** This is a test */
-    
-    _isNotFirst = [[NSUserDefaults standardUserDefaults] boolForKey:@"isNotFirst"];
-    
-    if (_isNotFirst)
+    //注册应用接收通知
+    if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0)
     {
-        /** 暂时不会进入 */
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings
+                                                                                  settingsForTypes: UIUserNotificationTypeAlert |
+                                                                                                              UIUserNotificationTypeBadge |
+                                                                                                              UIUserNotificationTypeSound
+                                                                                            categories: nil];
+        [application registerUserNotificationSettings:settings];
+    }
+    
+    /**  短信验证注册应用 */
+    [SMSSDK registerApp:appKey withSecret:appSecret];
+    [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
+    
+//    _isNotFirst = [[NSUserDefaults standardUserDefaults] boolForKey:@"isNotFirst"];
+//    
+//    
+//    if (_isNotFirst)
+    if ([RMUserInfo sharedRMUserInfo].everRegister)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
         [self setupNavigationController];
     }
     else
     {
-        /** 注释下面代码并 添加启动页面 */
-        [self setupNavigationController];
+        /** 添加启动页面 */
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
     }
     
     /** 统一导航栏风格 */
@@ -50,7 +73,7 @@
     return YES;
 }
 
-- (void)setupNavigationController
+- (void) setupNavigationController
 {
     /** 主视图实例对象 */
     UIStoryboard *MainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -81,7 +104,7 @@
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBackgroundImage:[UIImage imageNamed:@"矩形"] forBarMetrics:UIBarMetricsDefault];
     bar.barStyle = UIBarStyleBlack;
-    bar.tintColor = [UIColor whiteColor];
+    bar.tintColor = [UIColor purpleColor];
 }
 
 
