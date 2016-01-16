@@ -45,5 +45,7 @@
 	<string>请求获取您的位置信息</string>
 	<key>CFBundleDisplayName</key>
 	<string>全民健身</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<string>baidumap</string>
 </dict>
 </plist>

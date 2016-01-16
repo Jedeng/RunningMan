@@ -41,7 +41,11 @@
     
     /** 地图验证 */
     _manager = [[BMKMapManager alloc]init];
-    [_manager start:@"2mzXGZnNcV98dd8Mg4pNslRr" generalDelegate:self];
+   BOOL isSucces = [_manager start:@"IYG515yBgoVRmatEjzp0Rd7l" generalDelegate:self];
+    if (isSucces)
+    {
+        MYLog(@"百度地图验证成功!");
+    }
     
     return YES;
 }

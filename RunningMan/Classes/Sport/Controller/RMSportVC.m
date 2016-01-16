@@ -28,7 +28,7 @@
     /** 初始化地图 */
     self.mapView = [BMKMapView new];
     self.mapView.frame = self.view.bounds;
-    [self.mapView insertSubview:self.mapView atIndex:0];
+    [self.view insertSubview:self.mapView atIndex:0];
     
     [self setLocationService];
     [self setMapViewProperty];

@@ -157,16 +157,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="xeC-ha-YG3"/>
-                                <exclude reference="tfz-EK-VYR"/>
+                                <exclude reference="7kw-R7-gxS"/>
                                 <exclude reference="G64-kb-oaR"/>
                                 <exclude reference="Nyf-JE-7i5"/>
-                                <exclude reference="7kw-R7-gxS"/>
+                                <exclude reference="tfz-EK-VYR"/>
+                                <exclude reference="xeC-ha-YG3"/>
                                 <exclude reference="akf-Ti-fFW"/>
                                 <exclude reference="MAb-j5-uKK"/>
                                 <exclude reference="xqY-vm-d3h"/>
-                                <exclude reference="yG7-uJ-MDn"/>
                                 <exclude reference="AWd-IG-MsZ"/>
+                                <exclude reference="yG7-uJ-MDn"/>
                             </mask>
                         </variation>
                     </view>

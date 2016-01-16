@@ -171,6 +171,8 @@
 		B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5571C49111400E3F74A /* RMMyProfilesVC.m */; };
 		B856E55A1C49122B00E3F74A /* MyPofiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B856E5591C49122B00E3F74A /* MyPofiles.storyboard */; };
 		B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E55F1C491B9F00E3F74A /* RMSportVC.m */; };
+		B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3141C4A142700125004 /* RMSportTopic.m */; };
+		B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF31A1C4A1A6400125004 /* RMSetViewController.m */; };
 		B8E16B561C48CC7E0029B86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B551C48CC7E0029B86C /* Assets.xcassets */; };
 		B8E16B871C48DFA20029B86C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16B851C48DFA20029B86C /* AppDelegate.m */; };
 		B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */; };
@@ -526,6 +528,10 @@
 		B856E5591C49122B00E3F74A /* MyPofiles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPofiles.storyboard; sourceTree = "<group>"; };
 		B856E55E1C491B9F00E3F74A /* RMSportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportVC.h; sourceTree = "<group>"; };
 		B856E55F1C491B9F00E3F74A /* RMSportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportVC.m; sourceTree = "<group>"; };
+		B88EF3131C4A142700125004 /* RMSportTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportTopic.h; sourceTree = "<group>"; };
+		B88EF3141C4A142700125004 /* RMSportTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportTopic.m; sourceTree = "<group>"; };
+		B88EF3191C4A1A6400125004 /* RMSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetViewController.h; sourceTree = "<group>"; };
+		B88EF31A1C4A1A6400125004 /* RMSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetViewController.m; sourceTree = "<group>"; };
 		B8E16B461C48CC7E0029B86C /* RunningMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E16B551C48CC7E0029B86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B8E16B5A1C48CC7E0029B86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -1529,6 +1535,8 @@
 			children = (
 				B856E5561C49111400E3F74A /* RMMyProfilesVC.h */,
 				B856E5571C49111400E3F74A /* RMMyProfilesVC.m */,
+				B88EF3191C4A1A6400125004 /* RMSetViewController.h */,
+				B88EF31A1C4A1A6400125004 /* RMSetViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1570,12 +1578,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B88EF3101C4A12D600125004 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B88EF3111C4A12D600125004 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B88EF3131C4A142700125004 /* RMSportTopic.h */,
+				B88EF3141C4A142700125004 /* RMSportTopic.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B88EF3121C4A12D600125004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B8E16B3D1C48CC7D0029B86C = {
 			isa = PBXGroup;
 			children = (
-				B822B5451C49269A006F2EF5 /* libstdc++.tbd */,
-				B856E5471C49019400E3F74A /* libresolv.tbd */,
-				B856E5451C48FFB100E3F74A /* libxml2.tbd */,
 				B8E16B481C48CC7E0029B86C /* RunningMan */,
 				B8E16B471C48CC7E0029B86C /* Products */,
 			);
@@ -1652,6 +1680,9 @@
 		B8E16B8B1C48DFA80029B86C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B822B5451C49269A006F2EF5 /* libstdc++.tbd */,
+				B856E5471C49019400E3F74A /* libresolv.tbd */,
+				B856E5451C48FFB100E3F74A /* libxml2.tbd */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1714,6 +1745,9 @@
 		B8E16B931C48DFA80029B86C /* SportCircle */ = {
 			isa = PBXGroup;
 			children = (
+				B88EF3101C4A12D600125004 /* Controller */,
+				B88EF3111C4A12D600125004 /* Model */,
+				B88EF3121C4A12D600125004 /* View */,
 			);
 			path = SportCircle;
 			sourceTree = "<group>";
@@ -1950,10 +1984,12 @@
 				B856E4D11C48FD5F00E3F74A /* XMPPMessage.m in Sources */,
 				B856E36E1C48FD5300E3F74A /* SDWebImageManager.m in Sources */,
 				B856E5391C48FD5F00E3F74A /* DDLog.m in Sources */,
+				B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */,
 				B856E53E1C48FD5F00E3F74A /* NSString+DDXML.m in Sources */,
 				B856E36A1C48FD5300E3F74A /* SDWebImageCompat.m in Sources */,
 				B856E36F1C48FD5300E3F74A /* SDWebImagePrefetcher.m in Sources */,
 				B856E4DF1C48FD5F00E3F74A /* XMPPUserCoreDataStorageObject.m in Sources */,
+				B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */,
 				B856E52B1C48FD5F00E3F74A /* NSXMLElement+XEP_0297.m in Sources */,
 				B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */,
 				B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */,
