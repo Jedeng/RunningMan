@@ -123,6 +123,9 @@
                                 <state key="normal" title="个人设置">
                                     <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="EditMyPofilesBtn:" destination="iPq-AP-3Su" eventType="touchUpInside" id="dtu-JK-gDp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

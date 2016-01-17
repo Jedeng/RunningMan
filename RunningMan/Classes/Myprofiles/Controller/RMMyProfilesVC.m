@@ -11,7 +11,7 @@
 #import "RMXMPPTool.h"
 #import "XMPPvCardTemp.h"
 #import "UIImageView+RMRoundImageView.h"
-//#import "<#header#>"
+#import "RMSetViewController.h"
 
 
 @interface RMMyProfilesVC ()
@@ -22,26 +22,26 @@
 @end
 
 @implementation RMMyProfilesVC
-//
-///** 显示个人信息 */
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    XMPPvCardTemp *vCardTemp = [RMXMPPTool sharedRMXMPPTool] .xmppvCard.myvCardTemp;
-//    self.userNameLabel.text = [RMUserInfo sharedRMUserInfo].userNmae;
-//    self.nikeNameLabel.text = vCardTemp.nickname;
-//    
-//    if (vCardTemp.photo)
-//    {
-//        self.headerImageView.image = [UIImage imageWithData:vCardTemp.photo];
-//    }
-//    else
-//    {
-//        self.headerImageView.image = [UIImage imageNamed:@"icon"];
-//        /** 如果用户没有头像,将本地的 icon 作为该用户的头像并储存 */
-//        vCardTemp.photo = UIImagePNGRepresentation(self.headerImageView.image);
-//    }
-//    [self.headerImageView setRoundLayer];
-//}
+
+/** 显示个人信息 */
+- (void)viewWillAppear:(BOOL)animated
+{
+    XMPPvCardTemp *vCardTemp = [RMXMPPTool sharedRMXMPPTool] .xmppvCard.myvCardTemp;
+    self.userNameLabel.text = [RMUserInfo sharedRMUserInfo].userName;
+    self.nikeNameLabel.text = vCardTemp.nickname;
+    
+    if (vCardTemp.photo)
+    {
+        self.headerImageView.image = [UIImage imageWithData:vCardTemp.photo];
+    }
+    else
+    {
+        self.headerImageView.image = [UIImage imageNamed:@"icon"];
+        /** 如果用户没有头像,将本地的 icon 作为该用户的头像并储存 */
+        vCardTemp.photo = UIImagePNGRepresentation(self.headerImageView.image);
+    }
+    [self.headerImageView setRoundLayer];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,5 +72,10 @@
 
 
 
+- (IBAction)EditMyPofilesBtn:(id)sender
+{
+    RMSetViewController *setVC = [[RMSetViewController alloc]init];
+    [self.navigationController pushViewController:setVC animated:YES];
+}
 
 @end

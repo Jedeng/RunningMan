@@ -30,6 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    /** 调试状态,直接记住用户名和密码 */
+    self.userNameTextField.text = @"test1234";
+    self.userNameTextField.text = @"123456";
+    
 }
 
 #pragma  mark - 视图出现时

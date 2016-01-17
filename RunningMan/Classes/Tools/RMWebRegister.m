@@ -28,7 +28,7 @@ singleton_implementation(RMWebRegister);
 
     /**  发送请求 */
     [manager POST:baseUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        UIImage *image = [UIImage imageNamed:@"headImage"];
+        UIImage *image = [UIImage imageNamed:@"KR"];
         NSData *data = UIImagePNGRepresentation(image);
         [formData appendPartWithFileData:data name:@"pic" fileName:@"headImage.png" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
