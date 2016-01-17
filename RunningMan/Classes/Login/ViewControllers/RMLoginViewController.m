@@ -105,6 +105,7 @@
         {
             MYLog(@"登录成功");
             
+            [[RMUserInfo sharedRMUserInfo] setIsOnLine:YES];
             [RMUserInfo sharedRMUserInfo].loginStatus = YES;
             [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
             // 切换到主界面

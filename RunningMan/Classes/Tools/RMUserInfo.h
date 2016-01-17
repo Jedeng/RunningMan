@@ -33,7 +33,7 @@ singleton_interface(RMUserInfo)
 @property (nonatomic, assign,getter=isSinaLogin) BOOL sinaLogin;
 
 /** 判断用户是否已登录 */
-@property (nonatomic, assign,getter=isOnLine) BOOL OnLine;
+@property (nonatomic, assign) BOOL isOnLine;
 
 /**  登录的状态 YES 登录过/NO 注销 */
 @property (nonatomic, assign) BOOL  loginStatus;
