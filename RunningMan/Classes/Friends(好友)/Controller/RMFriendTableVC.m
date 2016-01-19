@@ -36,7 +36,7 @@
     [super viewWillAppear:animated];
     
     /** 加载好友列表:  */
-//    [self loadFriendsList];
+    [self loadFriendsList];
 }
 
 - (void) loadFriendsList

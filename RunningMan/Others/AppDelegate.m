@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RMMyProfilesVC.h"
 #import "MMDrawerController.h"  /** 侧滑三方 */
 #import "RMUserInfo.h"
-//#import "RMFMDataBase.h"
+
 #import "RMXMPPTool.h"
 
 /**  qq登录 */
@@ -21,9 +21,11 @@
 #define appKey    @"e8a9b25abf88"
 #define appSecret @"d5fc7fd3604b73c27f3156be12d7525b"
 
+
 @interface AppDelegate () <BMKGeneralDelegate>
 
 @property (nonatomic, strong) MMDrawerController *drawerController;
+
 @end
 
 @implementation AppDelegate
@@ -33,26 +35,39 @@
     
     //注册应用接收通知
     if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0){
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:    UIUserNotificationTypeAlert|UIUserNotificationTypeBadge| UIUserNotificationTypeSound
-                                                                                 categories:nil];
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeAlert|
+                                                                                                                                         UIUserNotificationTypeBadge|
+                                                                                                                                         UIUserNotificationTypeSound
+                                                                                                                       categories: nil];
         [application registerUserNotificationSettings:settings];
     }
     /**  注册应用 */
     [SMSSDK registerApp:appKey withSecret:appSecret];
     
-    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"]) {
-        
-        
-    }else
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"])
+    {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        self.window.rootViewController = storyboard.instantiateInitialViewController;
+//        [self setupNavigationController];
+    }
+    else
     {
         [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
         __weak typeof(self) loginVC = self;
         [[RMXMPPTool sharedRMXMPPTool] userLogin:^(RMXMPPResultType type) {
             [loginVC handleLoginResult:type];
         }];
-        
     }
+    /** 统一导航栏风格 */
+    [self setThem];
     
+    /** 地图验证 */
+    _manager = [[BMKMapManager alloc]init];
+    BOOL isSucces = [_manager start:@"IYG515yBgoVRmatEjzp0Rd7l" generalDelegate:self];
+    if (isSucces)
+    {
+        MYLog(@"百度地图验证成功!");
+    }
     return YES;
 }
 
@@ -74,6 +89,14 @@
     
 }
 
+- (void) setThem
+{
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage imageNamed:@"矩形"] forBarMetrics:UIBarMetricsDefault];
+    bar.barStyle = UIBarStyleBlack;
+    bar.tintColor = [UIColor purpleColor];
+}
+
 - (void)setupNavigationController
 {
     /** 主视图实例对象 */
@@ -81,9 +104,8 @@
     UIViewController *mainVC = [MainSB instantiateInitialViewController];
     
     /** 左边视图实例对象 */
-    //    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofile" bundle:nil];
-    //    MyPofileViewController *myPofileVC = [myPofileSB instantiateInitialViewController];
-    UIViewController *leftVC = [[UIViewController alloc] init];
+    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofiles" bundle:nil];
+    RMMyProfilesVC *leftVC = [myPofileSB instantiateInitialViewController];
     
     /** 使用抽屉第三方框架绑定视图控制器 */
     self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:mainVC leftDrawerViewController:leftVC];
@@ -106,25 +128,5 @@
     return [TencentOAuth HandleOpenURL:url];
 }
 
-#pragma  mark - 检查网络状态
--(void) onGetNetworkState:(int)iError
-{
-    
-    if (iError == 0) {
-//        MYLog(@"联网成功");
-    }else{
-        MYLog(@"联网失败:%s: \t%d",__FUNCTION__,iError);
-    }
-}
-
--(void)onGetPermissionState:(int)iError
-{
-    if (iError == 0) {
-//        MYLog(@"授权成功");
-    }else{
-        MYLog(@"授权失败 %s: \t %d",__FUNCTION__,iError);
-    }
-}
-
-
 @end
+
