@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupRightBarBtn];
+    [self setupLeftBarBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,7 +96,7 @@
 */
 
 #pragma mark -
-- (void) setupRightBarBtn
+- (void) setupLeftBarBtn
 {
     XMPPvCardTemp *vCard = [RMXMPPTool sharedRMXMPPTool].xmppvCard.myvCardTemp;
 

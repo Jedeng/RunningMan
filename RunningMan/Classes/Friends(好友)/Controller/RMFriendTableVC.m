@@ -21,9 +21,9 @@
 @interface RMFriendTableVC ()<NSFetchedResultsControllerDelegate>
 
 /** 朋友数组 */
-
+@property (nonatomic,strong) NSArray *friends;
 /** 利用结果控制器代理处理数据,可以实现随时监听数据变更 */
-@property (nonatomic, strong) NSFetchedResultsController *fetchController;
+@property (nonatomic,strong) NSFetchedResultsController *fetchController;
 
 
 
@@ -35,27 +35,28 @@
 {
     [super viewWillAppear:animated];
     
-    /** 加载好友列表: */
+    /** 加载好友列表:  */
 //    [self loadFriendsList];
 }
 
 - (void) loadFriendsList
 {
     /** 获取上下文对象 */
-    NSManagedObjectContext *context = [[RMXMPPTool sharedRMXMPPTool].xmppRosterStore mainThreadManagedObjectContext];
+    NSManagedObjectContext *context = [[RMXMPPTool sharedRMXMPPTool].xmppRosterStore
+                                                              mainThreadManagedObjectContext];
     
     /** 关联实体 */
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XMPPUserCoreDataStorageObject"];
     
     /** 设置过滤条件, predicate: 谓语,叙述语,断定,  此处可以当做过滤用... */
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"streamBareJidStr = %@",
-                                                                                                 [RMUserInfo sharedRMUserInfo].jidStr];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"streamBareJidStr = %@ and subscription!=%@",
+                                                                                                 [RMUserInfo sharedRMUserInfo].jidStr,@"none"];
     
     request.predicate = predicate;
     
     /** 排序 */
-    NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
-    request.sortDescriptors = @[sortDes];
+    NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
+    request.sortDescriptors = @[nameSort];
     
     /** 获取数据 */
     self.fetchController = [[NSFetchedResultsController alloc] initWithFetchRequest: request
@@ -77,7 +78,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupRightBarBtn];
+    [self setupLeftBarBtn];
     
 }
 
@@ -163,7 +164,7 @@
     [self.tableView reloadData];
 }
 
-- (void) setupRightBarBtn
+- (void) setupLeftBarBtn
 {
     XMPPvCardTemp *vCard = [RMXMPPTool sharedRMXMPPTool].xmppvCard.myvCardTemp;
     
