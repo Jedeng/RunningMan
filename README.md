@@ -38,7 +38,7 @@
     CeeYang: 
         艺名: Cee; 团队创建着(PS:装逼专用), 梦想是能在程序世界里留下一串很长的脚印;
     qinting513: 
-        ...
+        风一样的男子
     Shanpoo:
         大班花,温柔贤淑的妹子;
     NoTeamWithoutVictory:
