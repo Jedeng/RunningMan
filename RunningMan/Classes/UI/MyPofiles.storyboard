@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景图" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-vb-73O">
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-vb-73O">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -186,10 +186,10 @@
     </scenes>
     <resources>
         <image name="icon" width="36" height="41"/>
+        <image name="image1" width="966" height="607"/>
         <image name="power" width="13" height="14"/>
         <image name="圆角矩形-2" width="13" height="13"/>
         <image name="形状-8" width="13" height="11"/>
-        <image name="背景图" width="750" height="1334"/>
         <image name="设置" width="13" height="12"/>
     </resources>
 </document>

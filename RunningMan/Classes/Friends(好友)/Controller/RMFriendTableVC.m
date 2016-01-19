@@ -20,6 +20,8 @@
 /** 结果控制器代理 */
 @interface RMFriendTableVC ()<NSFetchedResultsControllerDelegate>
 
+/** 朋友数组 */
+
 /** 利用结果控制器代理处理数据,可以实现随时监听数据变更 */
 @property (nonatomic, strong) NSFetchedResultsController *fetchController;
 
@@ -76,6 +78,7 @@
     [super viewDidLoad];
     
     [self setupRightBarBtn];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,10 +88,14 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
         return self.fetchController.fetchedObjects.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *identifier = @"friendCell";

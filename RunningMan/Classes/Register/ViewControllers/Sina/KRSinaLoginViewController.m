@@ -6,9 +6,9 @@
 //  Copyright © 2016年 qt. All rights reserved.
 //
 
-#define APPKEY @"2075708624"
-#define APPSECRET  @"36a3d3dec55af644cd94a316fdd8bfd8"
-#define  REDIRECT_URI @"http://www.tedu.cn"
+#define APPKEY @"3562333159"
+#define APPSECRET  @"d59b60576d9d948bb1ab3ed3f04000c5"
+#define  REDIRECT_URI @"http://www.baidu.com"
 
 #import "KRSinaLoginViewController.h"
 #import "AFNetworking.h"
@@ -92,11 +92,11 @@
     
     NSString *url = @" https://api.weibo.com/oauth2/access_token";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"client_id"] = APPKEY;
+    parameters[@"client_id"]       = APPKEY;
     parameters[@"client_secret"] = APPSECRET;
-    parameters[@"grant_type"] = @"authorization_code";
-    parameters[@"code"] = code;
-    parameters[@"redirect_uri"] = REDIRECT_URI;
+    parameters[@"grant_type"]    = @"authorization_code";
+    parameters[@"code"]             = code;
+    parameters[@"redirect_uri"]  = REDIRECT_URI;
     
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         MYLog(@"获取token成功,responseObject:%@",responseObject);
