@@ -11,8 +11,9 @@
 #import "RMXMPPTool.h"
 #import "RMFriendCell.h"
 #import "UIImageView+RMRoundImageView.h"
+
 #import "UIViewController+MMDrawerController.h"
-//#import "<#header#>"
+#import "UIBarButtonItem+Item.h"
 
 
 
@@ -22,7 +23,7 @@
 /** 利用结果控制器代理处理数据,可以实现随时监听数据变更 */
 @property (nonatomic, strong) NSFetchedResultsController *fetchController;
 
-@property (weak, nonatomic) IBOutlet UIButton *myPofilesBtn;
+
 
 @end
 
@@ -74,7 +75,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.myPofilesBtn setBackgroundImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
+    [self setupRightBarBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -155,8 +156,27 @@
     [self.tableView reloadData];
 }
 
-
-- (IBAction)myPofilesBtn:(UIButton *)sender
+- (void) setupRightBarBtn
+{
+    XMPPvCardTemp *vCard = [RMXMPPTool sharedRMXMPPTool].xmppvCard.myvCardTemp;
+    
+    UIImage *headerImage = [[UIImage alloc]init];
+    if (vCard.photo) {
+       headerImage = [UIImage imageWithData:vCard.photo];
+    }
+    else
+    {
+        headerImage = [UIImage imageNamed:@"headImage"];
+    }
+    
+    UIBarButtonItem *item = [UIBarButtonItem itemWithImage: headerImage
+                                                                               highImage: nil
+                                                                                      target: self
+                                                                                     action: @selector(myPofilesBtn)
+                                                                    forControlEvents: UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = item;
+}
+- (void) myPofilesBtn
 {
     [[self mm_drawerController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }

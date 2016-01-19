@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81F16541C4E098E00E51B45 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B81F16521C4E098E00E51B45 /* UIBarButtonItem+Item.m */; };
+		B81F165A1C4E28DE00E51B45 /* RMSportCircleTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B81F16591C4E28DE00E51B45 /* RMSportCircleTableVC.m */; };
 		B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B822B5451C49269A006F2EF5 /* libstdc++.tbd */; };
 		B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		B82F6E701C4DEB30001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */; };
 		B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */; };
 		B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */; };
 		B82F6E7C1C4DECD0001DA949 /* RMTelRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */; };
@@ -207,9 +208,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B81F16521C4E098E00E51B45 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		B81F16531C4E098E00E51B45 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
+		B81F16581C4E28DE00E51B45 /* RMSportCircleTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportCircleTableVC.h; sourceTree = "<group>"; };
+		B81F16591C4E28DE00E51B45 /* RMSportCircleTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportCircleTableVC.m; sourceTree = "<group>"; };
 		B822B5451C49269A006F2EF5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = ../../Frameworks/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		B82F6E731C4DECD0001DA949 /* KRSinaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSinaLoginViewController.h; sourceTree = "<group>"; };
 		B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSinaLoginViewController.m; sourceTree = "<group>"; };
 		B82F6E761C4DECD0001DA949 /* RMTelRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterSuccessViewController.h; sourceTree = "<group>"; };
@@ -675,7 +679,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */,
-				B82F6E701C4DEB30001DA949 /* TencentOpenAPI.framework in Frameworks */,
 				B88EF34B1C4A2EC100125004 /* SMS_SDK.framework in Frameworks */,
 				B88EF3391C4A2C3B00125004 /* JavaScriptCore.framework in Frameworks */,
 				B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */,
@@ -739,7 +742,6 @@
 		B856E3221C48F57800E3F74A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */,
 				B856E3231C48F5EA00E3F74A /* RMFriendCell.h */,
 				B856E3241C48F5EA00E3F74A /* RMFriendCell.m */,
 			);
@@ -1655,6 +1657,8 @@
 		B88EF3101C4A12D600125004 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B81F16581C4E28DE00E51B45 /* RMSportCircleTableVC.h */,
+				B81F16591C4E28DE00E51B45 /* RMSportCircleTableVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1790,6 +1794,8 @@
 				B856E54D1C49071600E3F74A /* NSString+md5.m */,
 				B856E54F1C49076D00E3F74A /* UIImageView+RMRoundImageView.h */,
 				B856E5501C49076D00E3F74A /* UIImageView+RMRoundImageView.m */,
+				B81F16531C4E098E00E51B45 /* UIBarButtonItem+Item.h */,
+				B81F16521C4E098E00E51B45 /* UIBarButtonItem+Item.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2171,6 +2177,7 @@
 				B856E5161C48FD5F00E3F74A /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				B856E4F21C48FD5F00E3F74A /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
 				B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */,
+				B81F165A1C4E28DE00E51B45 /* RMSportCircleTableVC.m in Sources */,
 				B856E4C81C48FD5F00E3F74A /* XMPPPlainAuthentication.m in Sources */,
 				B856E4E81C48FD5F00E3F74A /* XMPPIQ+LastActivity.m in Sources */,
 				B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */,
@@ -2221,6 +2228,7 @@
 				B856E51D1C48FD5F00E3F74A /* XMPPvCardAvatarModule.m in Sources */,
 				B856E5191C48FD5F00E3F74A /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
 				B856E5411C48FD5F00E3F74A /* DDXMLNode.m in Sources */,
+				B81F16541C4E098E00E51B45 /* UIBarButtonItem+Item.m in Sources */,
 				B856E5011C48FD5F00E3F74A /* XMPPvCardTempBase.m in Sources */,
 				B856E4F91C48FD5F00E3F74A /* XMPPvCard.xcdatamodeld in Sources */,
 				B856E4D71C48FD5F00E3F74A /* XMPPCoreDataStorage.m in Sources */,

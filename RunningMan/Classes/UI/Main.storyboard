@@ -25,26 +25,6 @@
             </objects>
             <point key="canvasLocation" x="1111" y="377"/>
         </scene>
-        <!--运动-->
-        <scene sceneID="ugi-gW-Rn3">
-            <objects>
-                <viewController id="8aT-12-dJb" userLabel="运动" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lOY-q6-6Hx"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ep6-BB-hFx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BqQ-Qi-zgU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="朋友圈" id="kUN-LI-1y7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xlJ-iL-KIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1111" y="1161"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jlv-Fr-qlD">
             <objects>
@@ -78,12 +58,44 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8aT-12-dJb" kind="relationship" relationship="rootViewController" id="6WO-hK-DBs"/>
+                        <segue destination="XtV-uO-7Vm" kind="relationship" relationship="rootViewController" id="kgL-pA-XrI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjd-wg-m0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="299" y="1161"/>
+        </scene>
+        <!--运动圈-->
+        <scene sceneID="mWL-1J-Qqr">
+            <objects>
+                <tableViewController id="XtV-uO-7Vm" customClass="RMSportCircleTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ca6-44-mCR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gHY-J1-nTS">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHY-J1-nTS" id="tGO-Yg-Bnd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XtV-uO-7Vm" id="XAt-BB-jRc"/>
+                            <outlet property="delegate" destination="XtV-uO-7Vm" id="jKE-fq-vKa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="运动圈" id="Ld6-al-sYo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnw-lZ-Phr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="1155"/>
         </scene>
         <!--运动-->
         <scene sceneID="1yD-0a-JUL">
@@ -206,21 +218,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="好友列表" id="dS0-Oz-Dzm">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="OvT-11-kBB">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LNM-ts-7vJ">
-                                <rect key="frame" x="20" y="2" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="myPofilesBtn:" destination="vqT-Nd-yMn" eventType="touchUpInside" id="nHN-9Q-8RZ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="添加" id="gUE-56-J4D"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="myPofilesBtn" destination="LNM-ts-7vJ" id="jVo-QB-rSJ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIg-nh-TNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

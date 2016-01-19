@@ -8,7 +8,9 @@
 
 #import "RMSportVC.h"
 #import "BMapKit.h"
-
+#import "RMXMPPTool.h"
+#import "UIBarButtonItem+Item.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface RMSportVC ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 
@@ -39,6 +41,7 @@
     /** 启动定位服务 */
     [self.locationService startUserLocationService];
     
+    [self setupRightBarBtn];
 }
 
 
@@ -74,6 +77,30 @@
     
 }
 
+- (void) setupRightBarBtn
+{
+    XMPPvCardTemp *vCard = [RMXMPPTool sharedRMXMPPTool].xmppvCard.myvCardTemp;
+
+    UIImage *headerImage = [[UIImage alloc]init];
+    if (vCard.photo) {
+        headerImage = [UIImage imageWithData:vCard.photo];
+    }
+    else
+    {
+        headerImage = [UIImage imageNamed:@"headImage"];
+    }
+    
+    UIBarButtonItem *item = [UIBarButtonItem itemWithImage: headerImage
+                                                 highImage: nil
+                                                    target: self
+                                                    action: @selector(myPofilesBtn)
+                                          forControlEvents: UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = item;
+}
+- (void) myPofilesBtn
+{
+    [[self mm_drawerController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
