@@ -7,18 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "RMMyProfilesVC.h"
-#import "RMUserInfo.h"
-#import "RMXMPPTool.h"
 
 #import "MMDrawerController.h"  /** 侧滑三方 */
+#import "RMUserInfo.h"
+//#import "RMFMDataBase.h"
+#import "RMXMPPTool.h"
+
+/**  qq登录 */
+#import <TencentOpenAPI/TencentOAuth.h>
 
 /**  手机短信验证注册 */
 #import <SMS_SDK/SMSSDK.h>
 #define appKey    @"e8a9b25abf88"
 #define appSecret @"d5fc7fd3604b73c27f3156be12d7525b"
 
-@interface AppDelegate ()<BMKGeneralDelegate>
+@interface AppDelegate () <BMKGeneralDelegate>
+
 @property (nonatomic, strong) MMDrawerController *drawerController;
 @end
 
@@ -26,46 +30,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     //注册应用接收通知
-    if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0)
-    {
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings
-                                                                                  settingsForTypes: UIUserNotificationTypeAlert |
-                                                                                                              UIUserNotificationTypeBadge |
-                                                                                                              UIUserNotificationTypeSound
-                                                                                            categories: nil];
+    if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0){
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:    UIUserNotificationTypeAlert|UIUserNotificationTypeBadge| UIUserNotificationTypeSound
+                                                                                 categories:nil];
         [application registerUserNotificationSettings:settings];
     }
-    
-    /**  短信验证注册应用 */
+    /**  注册应用 */
     [SMSSDK registerApp:appKey withSecret:appSecret];
-
     
-     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"])
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"]) {
+        
+        
+    }else
     {
         [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
         __weak typeof(self) loginVC = self;
         [[RMXMPPTool sharedRMXMPPTool] userLogin:^(RMXMPPResultType type) {
             [loginVC handleLoginResult:type];
         }];
-    }
-    else
-    {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.window.rootViewController = storyboard.instantiateInitialViewController;
-        [self setupNavigationController];
-    }
-    
-    /** 统一导航栏风格 */
-    [self setThem];
-    
-    /** 地图验证 */
-    _manager = [[BMKMapManager alloc]init];
-   BOOL isSucces = [_manager start:@"IYG515yBgoVRmatEjzp0Rd7l" generalDelegate:self];
-    if (isSucces)
-    {
-        MYLog(@"百度地图验证成功!");
+        
     }
     
     return YES;
@@ -86,17 +71,19 @@
         default:
             break;
     }
+    
 }
 
-- (void) setupNavigationController
+- (void)setupNavigationController
 {
     /** 主视图实例对象 */
     UIStoryboard *MainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *mainVC = [MainSB instantiateInitialViewController];
     
     /** 左边视图实例对象 */
-    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofiles" bundle:nil];
-    RMMyProfilesVC *leftVC = [myPofileSB instantiateInitialViewController];
+    //    UIStoryboard *myPofileSB = [UIStoryboard storyboardWithName:@"MyPofile" bundle:nil];
+    //    MyPofileViewController *myPofileVC = [myPofileSB instantiateInitialViewController];
+    UIViewController *leftVC = [[UIViewController alloc] init];
     
     /** 使用抽屉第三方框架绑定视图控制器 */
     self.drawerController = [[MMDrawerController alloc]initWithCenterViewController:mainVC leftDrawerViewController:leftVC];
@@ -113,37 +100,31 @@
     _window.rootViewController = _drawerController;
 }
 
-/** 统一导航栏风格 */
-- (void) setThem
+#pragma mark - QQ登录注册
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
-    UINavigationBar *bar = [UINavigationBar appearance];
-    [bar setBackgroundImage:[UIImage imageNamed:@"矩形"] forBarMetrics:UIBarMetricsDefault];
-    bar.barStyle = UIBarStyleBlack;
-    bar.tintColor = [UIColor purpleColor];
+    return [TencentOAuth HandleOpenURL:url];
 }
 
-
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+#pragma  mark - 检查网络状态
+-(void) onGetNetworkState:(int)iError
+{
+    
+    if (iError == 0) {
+//        MYLog(@"联网成功");
+    }else{
+        MYLog(@"联网失败:%s: \t%d",__FUNCTION__,iError);
+    }
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+-(void)onGetPermissionState:(int)iError
+{
+    if (iError == 0) {
+//        MYLog(@"授权成功");
+    }else{
+        MYLog(@"授权失败 %s: \t %d",__FUNCTION__,iError);
+    }
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
 @end

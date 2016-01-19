@@ -34,6 +34,7 @@
 #import "XMPPvCardTemp.h"
 #import "XMPPvCardAvatarModule.h"
 
+#import "XMPPReconnect.h"
 
 // List the modules you're using here:
 // (the following may not be a complete list)

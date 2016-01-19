@@ -6,9 +6,9 @@
 //  Copyright © 2016年 qt. All rights reserved.
 //
 
-#define APPKEY @"2075708624"
-#define APPSECRET  @"36a3d3dec55af644cd94a316fdd8bfd8"
-#define  REDIRECT_URI @"http://www.tedu.cn"
+#define APPKEY @"3562333159"
+#define APPSECRET  @"d59b60576d9d948bb1ab3ed3f04000c5"
+#define  REDIRECT_URI @"http://www.baidu.com"
 
 #import "KRSinaLoginViewController.h"
 #import "AFNetworking.h"
@@ -106,12 +106,9 @@
         [RMUserInfo sharedRMUserInfo].userPassword = responseObject[@"access_token"];
         [RMUserInfo sharedRMUserInfo].registerName = innerName;
         [RMUserInfo sharedRMUserInfo].registerPassword = responseObject[@"access_token"];
-        [RMUserInfo sharedRMUserInfo].registerType = YES;
-        [RMUserInfo sharedRMUserInfo].sinaLogin = YES;
         [RMUserInfo sharedRMUserInfo].sinaToken = responseObject[@"access_token"];
-        [RMUserInfo sharedRMUserInfo].userEverLogin = YES;
-        [MBProgressHUD showSuccess:@"登录成功"];
-        [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
+        [RMUserInfo sharedRMUserInfo].registerType = YES;
+        
         __weak typeof(self) sinaVC = self;
         [[RMXMPPTool sharedRMXMPPTool] userRegister:^(RMXMPPResultType type) {
             [sinaVC handleRegisterResult:type];
@@ -145,6 +142,11 @@
             break;
         case RMXMPPResultTypeLoginSuccess:
         {
+            
+            [RMUserInfo sharedRMUserInfo].sinaLogin = YES;
+            [RMUserInfo sharedRMUserInfo].userEverLogin = YES;
+            [MBProgressHUD showSuccess:@"登录成功"];
+            [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
             break;

@@ -13,12 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
-@property (nonatomic, assign) BOOL isNotFirst;
-
 @property (nonatomic, strong) BMKMapManager *manager;
 
-- (void) setupNavigationController;
+- (void)setupNavigationController;
 
 @end
 

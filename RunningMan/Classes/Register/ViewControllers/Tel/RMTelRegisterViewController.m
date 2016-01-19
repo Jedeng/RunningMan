@@ -109,13 +109,13 @@
 }
 
 /**  跳转 */
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UIViewController * VC = segue.destinationViewController;
-    if ([VC isKindOfClass:[RMTelRegisterSuccessViewController class]]) {
-        RMTelRegisterSuccessViewController *registerSuccessVc = (RMTelRegisterSuccessViewController*)VC;
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    UIViewController * VC = segue.destinationViewController;
+//    if ([VC isKindOfClass:[RMTelRegisterSuccessViewController class]]) {
+//        RMTelRegisterSuccessViewController *registerSuccessVc = (RMTelRegisterSuccessViewController*)VC;
+//    }
+//}
 
 #pragma mark - 更换背景图
 -(void)changeBackGroundImage:(NSTimer*)timer

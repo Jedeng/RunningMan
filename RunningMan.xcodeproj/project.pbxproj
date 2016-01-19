@@ -11,8 +11,6 @@
 		B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		B82F6E701C4DEB30001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */; };
 		B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */; };
-		B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */; };
-		B82F6E7C1C4DECD0001DA949 /* RMTelRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */; };
 		B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */; };
 		B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */; };
 		B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3241C48F5EA00E3F74A /* RMFriendCell.m */; };
@@ -171,7 +169,6 @@
 		B856E5431C48FD5F00E3F74A /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B856E4C11C48FD5F00E3F74A /* libidn.a */; };
 		B856E5461C48FFB100E3F74A /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B856E5451C48FFB100E3F74A /* libxml2.tbd */; };
 		B856E5481C49019400E3F74A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B856E5471C49019400E3F74A /* libresolv.tbd */; };
-		B856E54B1C49029600E3F74A /* RMXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E54A1C49029600E3F74A /* RMXMPPTool.m */; };
 		B856E54E1C49071600E3F74A /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E54D1C49071600E3F74A /* NSString+md5.m */; };
 		B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5501C49076D00E3F74A /* UIImageView+RMRoundImageView.m */; };
 		B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5571C49111400E3F74A /* RMMyProfilesVC.m */; };
@@ -190,7 +187,6 @@
 		B88EF34A1C4A2EC100125004 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3461C4A2EC100125004 /* MOBFoundation.framework */; };
 		B88EF34B1C4A2EC100125004 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3471C4A2EC100125004 /* SMS_SDK.framework */; };
 		B8E16B561C48CC7E0029B86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B551C48CC7E0029B86C /* Assets.xcassets */; };
-		B8E16B871C48DFA20029B86C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16B851C48DFA20029B86C /* AppDelegate.m */; };
 		B8E16B981C48E1A10029B86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */; };
 		B8E16B991C48E1A10029B86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E16B971C48E1A10029B86C /* Main.storyboard */; };
 		B8E16B9D1C48E1FB0029B86C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16B9C1C48E1FB0029B86C /* main.m */; };
@@ -204,6 +200,10 @@
 		B8E16C031C48EA690029B86C /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16BFD1C48EA690029B86C /* MMDrawerController.m */; };
 		B8E16C041C48EA690029B86C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16BFF1C48EA690029B86C /* MMDrawerVisualState.m */; };
 		B8E16C051C48EA690029B86C /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E16C011C48EA690029B86C /* UIViewController+MMDrawerController.m */; };
+		DB6D176A1C4E1F3900FCD663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D17691C4E1F3900FCD663 /* AppDelegate.m */; };
+		DB6D176D1C4E200A00FCD663 /* RMXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D176C1C4E200A00FCD663 /* RMXMPPTool.m */; };
+		DB6D17731C4E20E400FCD663 /* RMTelRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D17701C4E20E400FCD663 /* RMTelRegisterSuccessViewController.m */; };
+		DB6D17741C4E20E400FCD663 /* RMTelRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D17721C4E20E400FCD663 /* RMTelRegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,10 +212,6 @@
 		B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = ../../Frameworks/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		B82F6E731C4DECD0001DA949 /* KRSinaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSinaLoginViewController.h; sourceTree = "<group>"; };
 		B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSinaLoginViewController.m; sourceTree = "<group>"; };
-		B82F6E761C4DECD0001DA949 /* RMTelRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterSuccessViewController.h; sourceTree = "<group>"; };
-		B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterSuccessViewController.m; sourceTree = "<group>"; };
-		B82F6E781C4DECD0001DA949 /* RMTelRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterViewController.h; sourceTree = "<group>"; };
-		B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterViewController.m; sourceTree = "<group>"; };
 		B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		B856E31D1C48F52500E3F74A /* RMFriendTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendTableVC.h; sourceTree = "<group>"; };
 		B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMFriendTableVC.m; sourceTree = "<group>"; };
@@ -542,8 +538,6 @@
 		B856E5441C48FE8800E3F74A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B856E5451C48FFB100E3F74A /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		B856E5471C49019400E3F74A /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		B856E5491C49029600E3F74A /* RMXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMXMPPTool.h; sourceTree = "<group>"; };
-		B856E54A1C49029600E3F74A /* RMXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMXMPPTool.m; sourceTree = "<group>"; };
 		B856E54C1C49071600E3F74A /* NSString+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
 		B856E54D1C49071600E3F74A /* NSString+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
 		B856E54F1C49076D00E3F74A /* UIImageView+RMRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RMRoundImageView.h"; sourceTree = "<group>"; };
@@ -573,8 +567,6 @@
 		B8E16B461C48CC7E0029B86C /* RunningMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E16B551C48CC7E0029B86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B8E16B5A1C48CC7E0029B86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		B8E16B841C48DFA20029B86C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B8E16B851C48DFA20029B86C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B8E16B961C48E1A10029B86C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8E16B971C48E1A10029B86C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B8E16B9C1C48E1FB0029B86C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -667,6 +659,14 @@
 		B8E16BFF1C48EA690029B86C /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		B8E16C001C48EA690029B86C /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		B8E16C011C48EA690029B86C /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		DB6D17681C4E1F3900FCD663 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB6D17691C4E1F3900FCD663 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB6D176B1C4E200A00FCD663 /* RMXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMXMPPTool.h; sourceTree = "<group>"; };
+		DB6D176C1C4E200A00FCD663 /* RMXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMXMPPTool.m; sourceTree = "<group>"; };
+		DB6D176F1C4E20E400FCD663 /* RMTelRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterSuccessViewController.h; sourceTree = "<group>"; };
+		DB6D17701C4E20E400FCD663 /* RMTelRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterSuccessViewController.m; sourceTree = "<group>"; };
+		DB6D17711C4E20E400FCD663 /* RMTelRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterViewController.h; sourceTree = "<group>"; };
+		DB6D17721C4E20E400FCD663 /* RMTelRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,17 +707,6 @@
 				B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */,
 			);
 			path = Sina;
-			sourceTree = "<group>";
-		};
-		B82F6E751C4DECD0001DA949 /* Tel */ = {
-			isa = PBXGroup;
-			children = (
-				B82F6E761C4DECD0001DA949 /* RMTelRegisterSuccessViewController.h */,
-				B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */,
-				B82F6E781C4DECD0001DA949 /* RMTelRegisterViewController.h */,
-				B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */,
-			);
-			path = Tel;
 			sourceTree = "<group>";
 		};
 		B856E3201C48F55400E3F74A /* Controller */ = {
@@ -1694,9 +1683,9 @@
 		B88EF32A1C4A2B6900125004 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB6D176E1C4E20E400FCD663 /* Tel */,
 				B82F6E711C4DECD0001DA949 /* QQ */,
 				B82F6E721C4DECD0001DA949 /* Sina */,
-				B82F6E751C4DECD0001DA949 /* Tel */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1756,8 +1745,8 @@
 		B8E16B831C48DFA20029B86C /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				B8E16B841C48DFA20029B86C /* AppDelegate.h */,
-				B8E16B851C48DFA20029B86C /* AppDelegate.m */,
+				DB6D17681C4E1F3900FCD663 /* AppDelegate.h */,
+				DB6D17691C4E1F3900FCD663 /* AppDelegate.m */,
 				B8E16B551C48CC7E0029B86C /* Assets.xcassets */,
 				B8E16B5A1C48CC7E0029B86C /* Info.plist */,
 			);
@@ -1886,8 +1875,8 @@
 				B856E3261C48FAF000E3F74A /* Singleton.h */,
 				B856E3271C48FC6700E3F74A /* RMUserInfo.h */,
 				B856E3281C48FC6700E3F74A /* RMUserInfo.m */,
-				B856E5491C49029600E3F74A /* RMXMPPTool.h */,
-				B856E54A1C49029600E3F74A /* RMXMPPTool.m */,
+				DB6D176B1C4E200A00FCD663 /* RMXMPPTool.h */,
+				DB6D176C1C4E200A00FCD663 /* RMXMPPTool.m */,
 				B88EF32F1C4A2B8B00125004 /* RMWebRegister.h */,
 				B88EF3301C4A2B8B00125004 /* RMWebRegister.m */,
 			);
@@ -2031,6 +2020,17 @@
 			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
+		DB6D176E1C4E20E400FCD663 /* Tel */ = {
+			isa = PBXGroup;
+			children = (
+				DB6D176F1C4E20E400FCD663 /* RMTelRegisterSuccessViewController.h */,
+				DB6D17701C4E20E400FCD663 /* RMTelRegisterSuccessViewController.m */,
+				DB6D17711C4E20E400FCD663 /* RMTelRegisterViewController.h */,
+				DB6D17721C4E20E400FCD663 /* RMTelRegisterViewController.m */,
+			);
+			path = Tel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2124,6 +2124,7 @@
 				B856E36A1C48FD5300E3F74A /* SDWebImageCompat.m in Sources */,
 				B856E36F1C48FD5300E3F74A /* SDWebImagePrefetcher.m in Sources */,
 				B856E4DF1C48FD5F00E3F74A /* XMPPUserCoreDataStorageObject.m in Sources */,
+				DB6D17741C4E20E400FCD663 /* RMTelRegisterViewController.m in Sources */,
 				B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */,
 				B856E52B1C48FD5F00E3F74A /* NSXMLElement+XEP_0297.m in Sources */,
 				B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */,
@@ -2132,11 +2133,9 @@
 				B856E5091C48FD5F00E3F74A /* XMPPPubSub.m in Sources */,
 				B856E4F41C48FD5F00E3F74A /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				B856E5361C48FD5F00E3F74A /* DDAbstractDatabaseLogger.m in Sources */,
-				B82F6E7C1C4DECD0001DA949 /* RMTelRegisterViewController.m in Sources */,
 				B856E5261C48FD5F00E3F74A /* XMPPTime.m in Sources */,
 				B856E4F01C48FD5F00E3F74A /* XMPPRoomHybridStorage.m in Sources */,
 				B856E5301C48FD5F00E3F74A /* GCDMulticastDelegate.m in Sources */,
-				B856E54B1C49029600E3F74A /* RMXMPPTool.m in Sources */,
 				B856E50C1C48FD5F00E3F74A /* XMPPMessage+XEP_0066.m in Sources */,
 				B856E4F61C48FD5F00E3F74A /* XMPPMessage+XEP0045.m in Sources */,
 				B856E5311C48FD5F00E3F74A /* RFImageToDataTransformer.m in Sources */,
@@ -2146,6 +2145,7 @@
 				B856E5061C48FD5F00E3F74A /* NSXMLElement+XEP_0059.m in Sources */,
 				B856E4F71C48FD5F00E3F74A /* XMPPMUC.m in Sources */,
 				B8E16B9D1C48E1FB0029B86C /* main.m in Sources */,
+				DB6D176D1C4E200A00FCD663 /* RMXMPPTool.m in Sources */,
 				B856E5121C48FD5F00E3F74A /* NSString+XEP_0106.m in Sources */,
 				B856E4D61C48FD5F00E3F74A /* XMPPBandwidthMonitor.m in Sources */,
 				B856E50E1C48FD5F00E3F74A /* XMPPDateTimeProfiles.m in Sources */,
@@ -2155,7 +2155,6 @@
 				B856E5321C48FD5F00E3F74A /* XMPPIDTracker.m in Sources */,
 				B856E4D21C48FD5F00E3F74A /* XMPPModule.m in Sources */,
 				B856E4E71C48FD5F00E3F74A /* XMPPJabberRPCModule.m in Sources */,
-				B8E16B871C48DFA20029B86C /* AppDelegate.m in Sources */,
 				B856E4C61C48FD5F00E3F74A /* XMPPDeprecatedPlainAuthentication.m in Sources */,
 				B856E5331C48FD5F00E3F74A /* XMPPSRVResolver.m in Sources */,
 				B856E4E21C48FD5F00E3F74A /* XMPPUserMemoryStorageObject.m in Sources */,
@@ -2173,7 +2172,6 @@
 				B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */,
 				B856E4C81C48FD5F00E3F74A /* XMPPPlainAuthentication.m in Sources */,
 				B856E4E81C48FD5F00E3F74A /* XMPPIQ+LastActivity.m in Sources */,
-				B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */,
 				B856E4F11C48FD5F00E3F74A /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				B856E50F1C48FD5F00E3F74A /* XMPPMessage+XEP_0085.m in Sources */,
 				B856E4DA1C48FD5F00E3F74A /* XMPPReconnect.m in Sources */,
@@ -2183,6 +2181,7 @@
 				B856E5211C48FD5F00E3F74A /* XMPPMessageDeliveryReceipts.m in Sources */,
 				B856E5001C48FD5F00E3F74A /* XMPPvCardTempAdrTypes.m in Sources */,
 				B856E4CF1C48FD5F00E3F74A /* XMPPIQ.m in Sources */,
+				DB6D17731C4E20E400FCD663 /* RMTelRegisterSuccessViewController.m in Sources */,
 				B856E4C51C48FD5F00E3F74A /* XMPPDeprecatedDigestAuthentication.m in Sources */,
 				B856E5021C48FD5F00E3F74A /* XMPPvCardTempEmail.m in Sources */,
 				B856E52F1C48FD5F00E3F74A /* DDList.m in Sources */,
@@ -2265,6 +2264,7 @@
 				B8E16C031C48EA690029B86C /* MMDrawerController.m in Sources */,
 				B856E5101C48FD5F00E3F74A /* XMPPSoftwareVersion.m in Sources */,
 				B856E5251C48FD5F00E3F74A /* XMPPAutoTime.m in Sources */,
+				DB6D176A1C4E1F3900FCD663 /* AppDelegate.m in Sources */,
 				B856E3421C48FD4900E3F74A /* AFSecurityPolicy.m in Sources */,
 				B856E5291C48FD5F00E3F74A /* XMPPAttentionModule.m in Sources */,
 				B856E5151C48FD5F00E3F74A /* XMPPCapsCoreDataStorageObject.m in Sources */,

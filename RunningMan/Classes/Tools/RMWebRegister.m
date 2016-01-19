@@ -25,7 +25,9 @@ singleton_implementation(RMWebRegister);
     parameters[@"username"] = [RMUserInfo sharedRMUserInfo].registerName;
     parameters[@"md5password"] = [[RMUserInfo sharedRMUserInfo].registerPassword md5StrXor];
     parameters[@"nickname"] = [RMUserInfo sharedRMUserInfo].registerName;
-
+    parameters[@"gender"] = @"1";
+    parameters[@"mobile"] = @"15811001234";
+    
     /**  发送请求 */
     [manager POST:baseUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         UIImage *image = [UIImage imageNamed:@"KR"];

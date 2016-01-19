@@ -21,48 +21,27 @@ typedef enum
 {
     RMXMPPResultTypeLoginSuccess,
     RMXMPPResultTypeLoginFailure,
-    RMXMPPResultTypeLoginFaild,
     RMXMPPResultTypeNetError,
     RMXMPPResultTypeRegisterSuccess,
     RMXMPPResultTypeRegisterFailure,
 }RMXMPPResultType;
 
-typedef void(^RMResultBlock)
-(RMXMPPResultType type);
+typedef void(^RMResultBlock)(RMXMPPResultType type);
 
 @interface RMXMPPTool : NSObject
-
 singleton_interface(RMXMPPTool)
 
 #pragma mark - 链接服务器类
 /** 负责和服务器经行交互的主要对象 */
 @property (nonatomic, strong) XMPPStream *xmppStream;
 
-/** 设置 XMPP 流  */
-- (void) setXmpp;
-
-/** 链接服务器 */
-- (void) connectHost;
-
-/** 授权成功后,发送密码 */
-- (void) sendPasswordToHost;
-
-/** 连接成功过会,发送在线消息 */
-- (void) sendOnLine;
-
-/** 退出登录,发送离线消息 */
-- (void) sendOffLine;
-
-
 #pragma mark -用户登录
-/** 用户登陆 */
+/** 用户登录 */
 - (void) userLogin: (RMResultBlock) block;
 /** 用户登出 */
 -(void) userLogout;
 /** 用户注册 */
 - (void) userRegister:(RMResultBlock) block;
-/** 清理资源 */
-- (void) cleanResource;
 
 
 #pragma makr - 电子名片

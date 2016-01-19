@@ -63,7 +63,7 @@
     user.registerName = user.userName;
     user.registerPassword = pwd1;
     user.userPassword = pwd1;
-    user.userEverLogin = YES;
+//    user.userEverLogin = YES;
     user.registerType = YES;
      MYLog(@"before:%@ -- %@ -- %d",user.userName,user.userPassword,user.userEverLogin);
     [user saveUserInfoToSandbox];
@@ -111,6 +111,8 @@
         }
         case RMXMPPResultTypeLoginSuccess:
         {
+            [RMUserInfo sharedRMUserInfo].userEverLogin = YES;
+            [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
             break;

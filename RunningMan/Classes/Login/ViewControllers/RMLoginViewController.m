@@ -52,6 +52,7 @@
     self.bgImageView.image = _bgImageArray[2];
     /**  定时更换 图片 */
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeBackGroundImage:) userInfo:nil repeats:YES];
+    /**  如果登录过则记住密码 */
     if ([RMUserInfo sharedRMUserInfo].isUerEverLogin) {
         self.userNameTextField.text = [RMUserInfo sharedRMUserInfo].userName;
         self.userPasswordTextField.text = [RMUserInfo sharedRMUserInfo].userPassword;
@@ -99,9 +100,9 @@
         return;
     }
     
-    RMUserInfo *userInfo = [RMUserInfo sharedRMUserInfo];
-    [userInfo loadUserInfoFromSandbox];
     [MBProgressHUD showMessage:@"正在登录..."];
+    
+    RMUserInfo *userInfo = [RMUserInfo sharedRMUserInfo];
     userInfo.userName = self.userNameTextField.text;
     userInfo.userPassword = self.userPasswordTextField.text;
     userInfo.registerType = NO;

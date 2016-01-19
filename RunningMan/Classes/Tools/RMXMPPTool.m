@@ -9,115 +9,131 @@
 #import "RMXMPPTool.h"
 #import "RMUserInfo.h"
 
+/*
+ * 在AppDelegate实现登录
+ 
+ 1. 初始化XMPPStream
+ 2. 连接到服务器[传一个JID]
+ 3. 连接到服务成功后，再发送密码授权
+ 4. 授权成功后，发送"在线" 消息
+ */
 
-/** 底层功能: 日志头文件 */
-//#import "DDLog.h"
-//#import "DDTTYLogger.h"
-
-@interface RMXMPPTool ()<XMPPStreamDelegate,XMPPRosterDelegate>//<XMPPStreamDelegate>
+@interface RMXMPPTool () <XMPPStreamDelegate,XMPPRosterDelegate>
 {
     RMResultBlock  _resultBlock;
+    XMPPReconnect *_reconnect;// 自动连接模块
 }
 
 /** 好友请求的用户的 Jid */
 @property (nonatomic, strong) XMPPJID *fJid;
+
+/** 设置 XMPP 流  */
+- (void) setXmpp;
+
+/** 链接服务器 */
+- (void) connectHost;
+
+/** 授权成功后,发送密码 */
+- (void) sendPasswordToHost;
+
+/** 连接成功 发送在线消息 */
+- (void) sendOnLine;
+
+/** 退出登录,发送离线消息 */
+- (void) sendOffLine;
+
+/** 清理资源 */
+- (void) teardownXmpp;
+
 @end
-
-
 
 @implementation RMXMPPTool
 
 singleton_implementation(RMXMPPTool)
 
-
-/** 设置 XMPP 流  */
+#pragma mark - 私有方法
+#pragma  mark - 初始化XMPP
 - (void) setXmpp
 {
-    /** 开启底层发送数据的日志 */
-    //    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    _xmppStream = [[XMPPStream alloc]init];
+    /** 设置代理 */
+    [_xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
-    self.xmppStream = [[XMPPStream alloc]init];
-    [self.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    //自动连接模块
+    _reconnect = [[XMPPReconnect alloc] init];
+    [_reconnect activate:_xmppStream];
     
-    /** 给头像电子名片模块和头像模块赋值 */
+    /** 给电子名片模块和头像模块赋值 */
     self.xmppvCardStore = [XMPPvCardCoreDataStorage sharedInstance];
-    self.xmppvCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:self.xmppvCardStore];
-    self.xmppvCardAvar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:self.xmppvCard];;
-    /** 激活电子名片模块和头像模块 */
-    [self.xmppvCard         activate:self.xmppStream];
-    [self.xmppvCardAvar  activate:self.xmppStream];
+    self.xmppvCard = [[XMPPvCardTempModule alloc]initWithvCardStorage:self.xmppvCardStore];
+    self.xmppvCardAvar = [[XMPPvCardAvatarModule alloc]initWithvCardTempModule:self.xmppvCard];
     
-    /** 设置好友列表模块 */
+    /** 激活电子名片模块 和 头像模块 */
+    [self.xmppvCard activate:self.xmppStream];
+    [self.xmppvCardAvar activate:self.xmppStream];
+    
+    /**给好友列表和存储对象赋值*/
     self.xmppRosterStore = [XMPPRosterCoreDataStorage sharedInstance];
-    self.xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:self.xmppRosterStore];
+    self.xmppRoster = [[XMPPRoster alloc]initWithRosterStorage:self.xmppRosterStore];
+    /** 激活好友列表 */
     [self.xmppRoster activate:self.xmppStream];
     
-    /** 设置聊天消息模块 */
+    /**  初始化消息模块 */
     self.xmppMsgArchStorage = [XMPPMessageArchivingCoreDataStorage sharedInstance];
-    self.xmppMsgArch = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:self.xmppMsgArchStorage];
+    self.xmppMsgArch = [[XMPPMessageArchiving alloc]initWithMessageArchivingStorage:self.xmppMsgArchStorage];
+    /**  激活消息模块 */
     [self.xmppMsgArch activate:self.xmppStream];
-    
 }
 
-/** 链接服务器 */
+/** 连接到服务器 */
 - (void) connectHost
 {
-    if ( !self.xmppStream )
-    {
+    if (!self.xmppStream) {
         [self setXmpp];
     }
-    
-    /** 给 xmppStream 做一些属性设置 */
+    /** 给xmppStream 做一些属性的赋值 */
     self.xmppStream.hostName = RMXMPPHOSTNAME;
     self.xmppStream.hostPort = RMXMPPPOST;
-    
-    /** 构建一个 GID ,设置中间变量,判断是登陆还是注册*/
+    /** 构建一个jid 根据登录名还是注册名 */
     NSString *uname = nil;
-    if ([[RMUserInfo sharedRMUserInfo] isRegisterType])
-    {
+    if ([RMUserInfo sharedRMUserInfo].isRegisterType) {
+        /**  注册 */
         uname = [RMUserInfo sharedRMUserInfo].registerName;
-    }
-    else
-    {
+    }else{
+        /**  登录 */
         uname = [RMUserInfo sharedRMUserInfo].userName;
     }
-    XMPPJID *myJid = [XMPPJID jidWithUser:uname domain:RMXMPPDOMAIN resource:@"iphone"];
+    
+    XMPPJID  *myJid = [XMPPJID jidWithUser:uname domain:RMXMPPDOMAIN resource:@"iphone"];
     self.xmppStream.myJID = myJid;
     
-    /** 链接服务器 */
-    NSError *error = nil;
-    [self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error];
-    if (error)
-    {
-        MYLog(@"链接服务器出错:%@",error);
+    /** 连接服务器 */
+    NSError  *error = nil;
+    [self.xmppStream  connectWithTimeout:XMPPStreamTimeoutNone error:&error];
+    if (error) {
+        MYLog(@"xmpp Stream connect error：%@",error);
     }
 }
 
-/** 授权成功后,发送密码 */
+/** 连接成功 发送密码 */
 - (void) sendPasswordToHost
 {
     NSString *pwd = nil;
-    NSError *error = nil;
-    
-    if ([RMUserInfo sharedRMUserInfo].isRegisterType)
-    {
-        /** 利用用户输入的密码进行注册 */
+    NSError  *error = nil;
+    if ([RMUserInfo sharedRMUserInfo].isRegisterType) {
         pwd = [RMUserInfo sharedRMUserInfo].registerPassword;
-        [self.xmppStream  registerWithPassword:pwd error:&error];
-    }
-    else
-    {
-        /** 利用用户密码进行登陆 */
+        /** 用密码进行注册 */
+        [self.xmppStream registerWithPassword:pwd error:&error];
+    }else{
         pwd = [RMUserInfo sharedRMUserInfo].userPassword;
+        /** 用密码进行授权 */
         [self.xmppStream authenticateWithPassword:pwd error:&error];
     }
-    if (error)
-    {
-        MYLog(@"%@",error);
+    if (error) {
+        MYLog(@"xmpp Stream send password error:%@",error);
     }
 }
-
-/** 链接成功后,发送在线消息 */
+/** 授权成功之后 发送在线消息 */
 - (void) sendOnLine
 {
     /** 默认代表在线 */
@@ -125,136 +141,171 @@ singleton_implementation(RMXMPPTool)
     [self.xmppStream sendElement:presence];
 }
 
-/** 退出时,发送离线消息 */
-- (void)sendOffLine
+/** 退出登录,发送离线消息 */
+- (void) sendOffLine
 {
     XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
     [self.xmppStream sendElement:presence];
 }
 
-#pragma mark - XMPPStreamDelegate
-/** 链接服务器成功 */
+#pragma mark - 释放xmppStream相关的资源
+-(void)teardownXmpp{
+    
+    // 移除代理
+    [_xmppStream removeDelegate:self];
+    
+    // 停止模块
+    [_reconnect deactivate]; //自动连接
+    [_xmppvCard deactivate];
+    [_xmppvCardAvar deactivate];
+    [_xmppRoster deactivate];
+    [_xmppMsgArch deactivate];
+    
+    // 断开连接
+    [_xmppStream disconnect];
+    
+    // 清空资源
+    _reconnect = nil;
+    _xmppvCard = nil;
+    _xmppvCardStore = nil;
+    _xmppvCardAvar = nil;
+    _xmppRoster = nil;
+    _xmppRosterStore = nil;
+    _xmppMsgArch = nil;
+    _xmppMsgArchStorage = nil;
+    _xmppStream = nil;
+}
+
+#pragma mark - XMPPStream Delegate
+/** 连接服务器成功 */
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
-    /** 发送密码 */
+    MYLog(@"连接服务器成功");
+    /** 连接成功则发送密码 */
     [self sendPasswordToHost];
 }
-
-/** 链接服务器失败 */
+/** 连接服务器失败 */
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
-    if (error /** && _resultBlock */)
-    {
-        MYLog(@"链接服务器失败:%@",error);
+    if (error && _resultBlock) {
         _resultBlock(RMXMPPResultTypeNetError);
+        MYLog(@"连接服务器失败:%@",error);
     }
-    
-    /** 链接服务器失败,就调用代理的成功方法
-     if ([self.delegate respondsToSelector:@selector(krNetError)])
-     {
-     [self.delegate krNetError];
-     }
-     */
 }
 
-/** 授权成功的方法 */
-- (void) xmppStreamDidAuthenticate:(XMPPStream *)sender
-{
-    _resultBlock(RMXMPPResultTypeLoginSuccess);
-    
-    /** 授权成功,就调用代理的成功方法
-     if ([self.delegate respondsToSelector:@selector(krLoginSuccess)])
-     {
-     [self.delegate krLoginSuccess];
-     }
-     */
-    
-    /** 发送在线消息 */
-    [self sendOnLine];
-}
-
-/** 授权失败的方法 */
-- (void) xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
-{
-    MYLog(@"授权失败:%@",error);
-    
-    if (error && _resultBlock)
-    {
-        _resultBlock (RMXMPPResultTypeLoginFaild);
-    }
-    
-    /** 授权失败,就调用代理的成功方法
-     if ([self.delegate respondsToSelector:@selector( krLoginFailed)])
-     {
-     [self.delegate krLoginFailed];
-     }
-     */
-}
-
-
-#pragma mark - 用户注册
 /** 注册成功 */
-- (void) xmppStreamDidRegister:(XMPPStream *)sender
+- (void)xmppStreamDidRegister:(XMPPStream *)sender
 {
-    if (_resultBlock)
-    {
+   
+    if (_resultBlock) {
         _resultBlock(RMXMPPResultTypeRegisterSuccess);
+         MYLog(@"注册成功");
     }
 }
-
 /** 注册失败 */
-- (void) xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error
 {
-    if (_resultBlock)
-    {
+    if (_resultBlock && error) {
+        MYLog(@"XMPPStream 注册失败：%@",error);
         _resultBlock(RMXMPPResultTypeRegisterFailure);
     }
 }
 
-/** 用户登陆 */
-- (void)userLogin: (RMResultBlock) block
+/** 授权成功的方法 */
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-    /** 利用 block 保存传进来的 block 代码 */
-    _resultBlock = block;
-    
-    /** 无论有没有登录过,都断开一次连接 */
-    [self.xmppStream disconnect];
-    [self connectHost];
-    
-    
+    _resultBlock(RMXMPPResultTypeLoginSuccess);
+    MYLog(@"授权成功");
+    /** 授权成功则 发送在线消息 */
+    [self sendOnLine];
+}
+/** 授权失败的方法 */
+- (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
+{
+    if (error && _resultBlock) {
+         MYLog(@"授权失败:%@",error);
+        _resultBlock(RMXMPPResultTypeLoginFailure);
+    }
 }
 
-/** 用户注册 */
-- (void)userRegister:(RMResultBlock) block
+#pragma mark - 后台接收到好友消息 推送
+-(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
+    MYLog(@"后台接收到好友消息:%@",message);
+    
+    //如果当前程序不在前台，发出一个本地通知
+    if([UIApplication sharedApplication].applicationState != UIApplicationStateActive){
+        MYLog(@"在后台");
+        
+        //本地通知
+        UILocalNotification *localNoti = [[UILocalNotification alloc] init];
+        
+        // 设置内容
+        localNoti.alertBody = [NSString stringWithFormat:@"%@\n%@",message.fromStr,message.body];
+        
+        // 设置通知执行时间
+        localNoti.fireDate = [NSDate date];
+        
+        //声音
+        localNoti.soundName = @"default";
+        
+        //执行
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNoti];
+        
+        //{"aps":{'alert':"zhangsan\n have dinner":'sound':'default',badge:'12'}}
+    }
+}
+
+-(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    //XMPPPresence 在线 离线
+    
+    //presence.from 消息是谁发送过来
+}
+
+-(void)dealloc{
+//    [self teardownXmpp];
+}
+
+#pragma  mark - 公用方法
+#pragma  mark - 用户登录方法
+- (void) userLogin: (RMResultBlock) block
 {
     _resultBlock = block;
-    /** 断开之前的链接 */
     [self.xmppStream disconnect];
     [self connectHost];
 }
 
-#pragma mark - 释放资源
-- (void) dealloc
+#pragma  mark - 用户注册方法
+/** 用户注册调用的方法 要得到注册的状态 传入一个block 即可 */
+- (void) userRegister:(RMResultBlock) block
 {
-    [self cleanResource];
+    _resultBlock = block;
+    /** 无论之前 xmppStream 有没有连接 都直接断开上一次连接 */
+    [self.xmppStream disconnect];
+    [self connectHost];
 }
-- (void) cleanResource
-{
-    /** 移除代理 */
-    [_xmppStream removeDelegate:self];
-    /** 停止激活 */
-    [_xmppMsgArch deactivate];
-    [_xmppvCardAvar deactivate];
-    [_xmppRoster deactivate];
-    /** 断开连接 */
+
+#warning  用户退出登录
+-(void) userLogout{
+    // 1." 发送 "离线" 消息"
+    [self sendOffLine];
+    
+    // 2. 与服务器断开连接
     [_xmppStream disconnect];
-    _xmppStream               = nil;
-    _xmppMsgArch             = nil;
-    _xmppMsgArchStorage  = nil;
-    _xmppRoster                 = nil;
-    _xmppRosterStore         = nil;
-    _xmppvCardAvar           = nil;
-    _xmppvCardStore          = nil;
+    
+    [RMUserInfo sharedRMUserInfo].jidStr = nil;
+    if ([RMUserInfo sharedRMUserInfo].sinaLogin)
+    {
+        [RMUserInfo sharedRMUserInfo].sinaLogin = NO;
+        [RMUserInfo sharedRMUserInfo].userName = nil;
+    }
+    
+    //3.更新用户的登录状态
+    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
+    
+    // 4. 回到登录界面
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [mainSB instantiateInitialViewController];
+    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
     
 }
 
@@ -276,10 +327,10 @@ singleton_implementation(RMXMPPTool)
     self.fJid = jid;
     NSString *title = [NSString stringWithFormat:@"%@想申请加好友",jidStr];
     UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle: title
-                                                                                        delegate: self
-                                                                          cancelButtonTitle: @"取消"
-                                                                   destructiveButtonTitle: @"同意"
-                                                                          otherButtonTitles: @"同意并添加对方为好友", nil];
+                                                           delegate: self
+                                                  cancelButtonTitle: @"取消"
+                                             destructiveButtonTitle: @"同意"
+                                                  otherButtonTitles: @"同意并添加对方为好友", nil];
     
     [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
     
@@ -314,23 +365,6 @@ singleton_implementation(RMXMPPTool)
     }else{
         [self.xmppRoster  rejectPresenceSubscriptionRequestFrom:self.fJid];
     }
-}
-
-#warning  TODO:跳转到哪个界面
--(void) userLogout{
-    // 1." 发送 "离线" 消息"
-    [self sendOffLine];
-    
-    // 2. 与服务器断开连接
-    [_xmppStream disconnect];
-    
-    // 3. 回到登录界面
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
-    [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
-    
-    //4.更新用户的登录状态
-    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
-    
 }
 
 @end
