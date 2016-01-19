@@ -92,11 +92,11 @@
     
     NSString *url = @" https://api.weibo.com/oauth2/access_token";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"client_id"] = APPKEY;
+    parameters[@"client_id"]       = APPKEY;
     parameters[@"client_secret"] = APPSECRET;
-    parameters[@"grant_type"] = @"authorization_code";
-    parameters[@"code"] = code;
-    parameters[@"redirect_uri"] = REDIRECT_URI;
+    parameters[@"grant_type"]    = @"authorization_code";
+    parameters[@"code"]             = code;
+    parameters[@"redirect_uri"]  = REDIRECT_URI;
     
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         MYLog(@"获取token成功,responseObject:%@",responseObject);
