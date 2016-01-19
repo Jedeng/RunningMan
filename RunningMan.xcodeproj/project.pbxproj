@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B822B5451C49269A006F2EF5 /* libstdc++.tbd */; };
+		B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		B82F6E701C4DEB30001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */; };
+		B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */; };
+		B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */; };
+		B82F6E7C1C4DECD0001DA949 /* RMTelRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */; };
+		B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */; };
 		B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */; };
 		B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3241C48F5EA00E3F74A /* RMFriendCell.m */; };
 		B856E3291C48FC6700E3F74A /* RMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3281C48FC6700E3F74A /* RMUserInfo.m */; };
@@ -175,7 +181,6 @@
 		B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF31A1C4A1A6400125004 /* RMSetViewController.m */; };
 		B88EF3241C4A2B0F00125004 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */; };
 		B88EF3291C4A2B4200125004 /* RMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3271C4A2B4200125004 /* RMLoginViewController.m */; };
-		B88EF32E1C4A2B6900125004 /* RMRegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */; };
 		B88EF3311C4A2B8B00125004 /* RMWebRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3301C4A2B8B00125004 /* RMWebRegister.m */; };
 		B88EF3331C4A2C1300125004 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3321C4A2C1300125004 /* libz.tbd */; };
 		B88EF3351C4A2C2300125004 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EF3341C4A2C2300125004 /* libicucore.tbd */; };
@@ -203,6 +208,15 @@
 
 /* Begin PBXFileReference section */
 		B822B5451C49269A006F2EF5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = ../../Frameworks/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		B82F6E731C4DECD0001DA949 /* KRSinaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSinaLoginViewController.h; sourceTree = "<group>"; };
+		B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSinaLoginViewController.m; sourceTree = "<group>"; };
+		B82F6E761C4DECD0001DA949 /* RMTelRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterSuccessViewController.h; sourceTree = "<group>"; };
+		B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterSuccessViewController.m; sourceTree = "<group>"; };
+		B82F6E781C4DECD0001DA949 /* RMTelRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTelRegisterViewController.h; sourceTree = "<group>"; };
+		B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTelRegisterViewController.m; sourceTree = "<group>"; };
+		B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		B856E31D1C48F52500E3F74A /* RMFriendTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendTableVC.h; sourceTree = "<group>"; };
 		B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMFriendTableVC.m; sourceTree = "<group>"; };
 		B856E3231C48F5EA00E3F74A /* RMFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendCell.h; sourceTree = "<group>"; };
@@ -546,8 +560,6 @@
 		B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		B88EF3261C4A2B4200125004 /* RMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLoginViewController.h; sourceTree = "<group>"; };
 		B88EF3271C4A2B4200125004 /* RMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLoginViewController.m; sourceTree = "<group>"; };
-		B88EF32B1C4A2B6900125004 /* RMRegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRegisterTableViewController.h; sourceTree = "<group>"; };
-		B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRegisterTableViewController.m; sourceTree = "<group>"; };
 		B88EF32F1C4A2B8B00125004 /* RMWebRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWebRegister.h; sourceTree = "<group>"; };
 		B88EF3301C4A2B8B00125004 /* RMWebRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWebRegister.m; sourceTree = "<group>"; };
 		B88EF3321C4A2C1300125004 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -663,8 +675,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B822B5461C49269A006F2EF5 /* libstdc++.tbd in Frameworks */,
+				B82F6E701C4DEB30001DA949 /* TencentOpenAPI.framework in Frameworks */,
 				B88EF34B1C4A2EC100125004 /* SMS_SDK.framework in Frameworks */,
 				B88EF3391C4A2C3B00125004 /* JavaScriptCore.framework in Frameworks */,
+				B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */,
 				B88EF34A1C4A2EC100125004 /* MOBFoundation.framework in Frameworks */,
 				B88EF3371C4A2C3000125004 /* MessageUI.framework in Frameworks */,
 				B88EF3351C4A2C2300125004 /* libicucore.tbd in Frameworks */,
@@ -679,6 +693,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82F6E711C4DECD0001DA949 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		B82F6E721C4DECD0001DA949 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				B82F6E731C4DECD0001DA949 /* KRSinaLoginViewController.h */,
+				B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		B82F6E751C4DECD0001DA949 /* Tel */ = {
+			isa = PBXGroup;
+			children = (
+				B82F6E761C4DECD0001DA949 /* RMTelRegisterSuccessViewController.h */,
+				B82F6E771C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m */,
+				B82F6E781C4DECD0001DA949 /* RMTelRegisterViewController.h */,
+				B82F6E791C4DECD0001DA949 /* RMTelRegisterViewController.m */,
+			);
+			path = Tel;
+			sourceTree = "<group>";
+		};
 		B856E3201C48F55400E3F74A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +739,7 @@
 		B856E3221C48F57800E3F74A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B82F6E6E1C4DEB2F001DA949 /* TencentOpenAPI.framework */,
 				B856E3231C48F5EA00E3F74A /* RMFriendCell.h */,
 				B856E3241C48F5EA00E3F74A /* RMFriendCell.m */,
 			);
@@ -1652,8 +1694,9 @@
 		B88EF32A1C4A2B6900125004 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B88EF32B1C4A2B6900125004 /* RMRegisterTableViewController.h */,
-				B88EF32C1C4A2B6900125004 /* RMRegisterTableViewController.m */,
+				B82F6E711C4DECD0001DA949 /* QQ */,
+				B82F6E721C4DECD0001DA949 /* Sina */,
+				B82F6E751C4DECD0001DA949 /* Tel */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1754,6 +1797,8 @@
 		B8E16B8B1C48DFA80029B86C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */,
+				B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */,
 				B88EF3381C4A2C3B00125004 /* JavaScriptCore.framework */,
 				B88EF3361C4A2C3000125004 /* MessageUI.framework */,
 				B88EF3341C4A2C2300125004 /* libicucore.tbd */,
@@ -2045,6 +2090,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				B8E16B991C48E1A10029B86C /* Main.storyboard in Resources */,
 				B8E16BEE1C48EA0E0029B86C /* mapapi.bundle in Resources */,
 				B88EF3491C4A2EC100125004 /* SMS_SDKLocalizable.strings in Resources */,
@@ -2086,6 +2132,7 @@
 				B856E5091C48FD5F00E3F74A /* XMPPPubSub.m in Sources */,
 				B856E4F41C48FD5F00E3F74A /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				B856E5361C48FD5F00E3F74A /* DDAbstractDatabaseLogger.m in Sources */,
+				B82F6E7C1C4DECD0001DA949 /* RMTelRegisterViewController.m in Sources */,
 				B856E5261C48FD5F00E3F74A /* XMPPTime.m in Sources */,
 				B856E4F01C48FD5F00E3F74A /* XMPPRoomHybridStorage.m in Sources */,
 				B856E5301C48FD5F00E3F74A /* GCDMulticastDelegate.m in Sources */,
@@ -2123,8 +2170,10 @@
 				B856E4E61C48FD5F00E3F74A /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				B856E5161C48FD5F00E3F74A /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				B856E4F21C48FD5F00E3F74A /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
+				B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */,
 				B856E4C81C48FD5F00E3F74A /* XMPPPlainAuthentication.m in Sources */,
 				B856E4E81C48FD5F00E3F74A /* XMPPIQ+LastActivity.m in Sources */,
+				B82F6E7B1C4DECD0001DA949 /* RMTelRegisterSuccessViewController.m in Sources */,
 				B856E4F11C48FD5F00E3F74A /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				B856E50F1C48FD5F00E3F74A /* XMPPMessage+XEP_0085.m in Sources */,
 				B856E4DA1C48FD5F00E3F74A /* XMPPReconnect.m in Sources */,
@@ -2202,7 +2251,6 @@
 				B856E4D31C48FD5F00E3F74A /* XMPPParser.m in Sources */,
 				B856E4EE1C48FD5F00E3F74A /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				B856E5401C48FD5F00E3F74A /* DDXMLElement.m in Sources */,
-				B88EF32E1C4A2B6900125004 /* RMRegisterTableViewController.m in Sources */,
 				B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */,
 				B856E50B1C48FD5F00E3F74A /* XMPPIQ+XEP_0066.m in Sources */,
 				B856E54E1C49071600E3F74A /* NSString+md5.m in Sources */,
@@ -2342,6 +2390,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RunningMan/Classes/Lib/SMS_SDK",
+					"$(PROJECT_DIR)/RunningMan/Classes/Frameworks",
+					"$(PROJECT_DIR)/RunningMan/Classes/Frameworks/TencentOpenApi_IOS_Bundle.bundle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
@@ -2368,6 +2418,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RunningMan/Classes/Lib/SMS_SDK",
+					"$(PROJECT_DIR)/RunningMan/Classes/Frameworks",
+					"$(PROJECT_DIR)/RunningMan/Classes/Frameworks/TencentOpenApi_IOS_Bundle.bundle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";

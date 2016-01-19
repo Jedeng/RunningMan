@@ -51,12 +51,14 @@ singleton_interface(RMXMPPTool)
 - (void) sendOnLine;
 
 /** 退出登录,发送离线消息 */
-- (void) sedOffLine;
+- (void) sendOffLine;
 
 
 #pragma mark -用户登录
 /** 用户登陆 */
 - (void) userLogin: (RMResultBlock) block;
+/** 用户登出 */
+-(void) userLogout;
 /** 用户注册 */
 - (void) userRegister:(RMResultBlock) block;
 /** 清理资源 */

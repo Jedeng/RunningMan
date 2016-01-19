@@ -56,7 +56,7 @@
 - (IBAction)logoutBtn:(id)sender
 {
     [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
-    [[RMXMPPTool sharedRMXMPPTool] sedOffLine];
+    [[RMXMPPTool sharedRMXMPPTool] sendOffLine];
     [RMUserInfo sharedRMUserInfo].jidStr = nil;
     
     if ([RMUserInfo sharedRMUserInfo].sinaLogin)

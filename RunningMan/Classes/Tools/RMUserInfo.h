@@ -32,11 +32,17 @@ singleton_interface(RMUserInfo)
 @property (nonatomic, copy) NSString *sinaToken;
 @property (nonatomic, assign,getter=isSinaLogin) BOOL sinaLogin;
 
-/** 判断用户是否已登录 */
-@property (nonatomic, assign) BOOL isOnLine;
+/**  首次登录 则需要输入，再次启动时自动登录，用于判断记住上次用户的密码 */
+#warning  如果更换用户，怎么办 --> 更换用户了 用户信息也更新了
+@property (nonatomic, assign,getter=isUerEverLogin) BOOL  userEverLogin;
 
-/**  登录的状态 YES 登录过/NO 注销 */
-@property (nonatomic, assign) BOOL  loginStatus;
+///** 数据库的 判断是否是注册成功过，1是成功，0是不成功 */
+//@property (nonatomic,assign) int isEverRegisterSuccess;
+///**  是否记住密码 1记住 0不记住 */
+//@property (nonatomic, assign) int isRememberPassword;
+
+/**  用户头像url  */
+@property (nonatomic,strong) NSString *iconUrl;
 
 /**  从沙盒里获取用户数据  登录时使用 */
 -(void)loadUserInfoFromSandbox;

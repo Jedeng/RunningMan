@@ -126,7 +126,7 @@ singleton_implementation(RMXMPPTool)
 }
 
 /** 退出时,发送离线消息 */
-- (void)sedOffLine
+- (void)sendOffLine
 {
     XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
     [self.xmppStream sendElement:presence];
@@ -316,6 +316,21 @@ singleton_implementation(RMXMPPTool)
     }
 }
 
-
+#warning  TODO:跳转到哪个界面
+-(void) userLogout{
+    // 1." 发送 "离线" 消息"
+    [self sendOffLine];
+    
+    // 2. 与服务器断开连接
+    [_xmppStream disconnect];
+    
+    // 3. 回到登录界面
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+    [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
+    
+    //4.更新用户的登录状态
+    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
+    
+}
 
 @end

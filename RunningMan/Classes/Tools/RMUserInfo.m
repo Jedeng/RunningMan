@@ -9,9 +9,8 @@
 #import "RMUserInfo.h"
 
 #define UserKey @"userName"
-#define LoginStatusKey @"LoginStatus"
 #define PwdKey @"userPassword"
-#define EverRegister @"everRegister"
+#define UserEverLogin @"userEverLogin"
 
 @implementation RMUserInfo
 
@@ -21,9 +20,8 @@ singleton_implementation(RMUserInfo)
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:self.userName forKey:UserKey];
-    [defaults setBool:self.loginStatus forKey:LoginStatusKey];
     [defaults setObject:self.userPassword forKey:PwdKey];
-    [defaults setBool:self.everRegister  forKey:EverRegister];
+    [defaults setBool:self.userEverLogin forKey:UserEverLogin];
     [defaults synchronize];
     
 }
@@ -31,11 +29,9 @@ singleton_implementation(RMUserInfo)
 -(void)loadUserInfoFromSandbox{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.userName = [defaults objectForKey:UserKey];
-    self.loginStatus = [defaults boolForKey:LoginStatusKey];
     self.userPassword = [defaults objectForKey:PwdKey];
-    self.everRegister = [defaults boolForKey:EverRegister];
+    self.userEverLogin = [defaults boolForKey:UserEverLogin];
 }
-
 
 -(NSString *)jidStr{
     return [NSString stringWithFormat:@"%@@%@",self.userName,RMXMPPDOMAIN];

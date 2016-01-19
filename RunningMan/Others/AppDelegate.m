@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RMMyProfilesVC.h"
 #import "RMUserInfo.h"
+#import "RMXMPPTool.h"
 
 #import "MMDrawerController.h"  /** 侧滑三方 */
 
@@ -25,8 +26,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+
     //注册应用接收通知
     if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0)
     {
@@ -40,23 +40,21 @@
     
     /**  短信验证注册应用 */
     [SMSSDK registerApp:appKey withSecret:appSecret];
-    [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
+
     
-//    _isNotFirst = [[NSUserDefaults standardUserDefaults] boolForKey:@"isNotFirst"];
-//    
-//    
-//    if (_isNotFirst)
-    if ([RMUserInfo sharedRMUserInfo].everRegister)
+     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"])
+    {
+        [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
+        __weak typeof(self) loginVC = self;
+        [[RMXMPPTool sharedRMXMPPTool] userLogin:^(RMXMPPResultType type) {
+            [loginVC handleLoginResult:type];
+        }];
+    }
+    else
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.window.rootViewController = storyboard.instantiateInitialViewController;
         [self setupNavigationController];
-    }
-    else
-    {
-        /** 添加启动页面 */
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
-        self.window.rootViewController = storyboard.instantiateInitialViewController;
     }
     
     /** 统一导航栏风格 */
@@ -71,6 +69,23 @@
     }
     
     return YES;
+}
+
+-(void)handleLoginResult:(RMXMPPResultType)type
+{
+    switch (type) {
+        case RMXMPPResultTypeLoginSuccess:
+            [self setupNavigationController];
+            break;
+        case RMXMPPResultTypeLoginFailure:
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+            self.window.rootViewController = storyboard.instantiateInitialViewController;
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void) setupNavigationController

@@ -85,20 +85,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([RMUserInfo sharedRMUserInfo].isOnLine)
-    {
         return self.fetchController.fetchedObjects.count;
-    }
-    else
-    {
-        return 0;
-    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([RMUserInfo sharedRMUserInfo].isOnLine)
-    {
         static NSString *identifier = @"friendCell";
         RMFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
@@ -134,12 +125,6 @@
         }
 
         return cell;
-    }
-    else
-    {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        return cell;
-    }
 }
 
 /** 行高 */
