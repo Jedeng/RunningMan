@@ -13,6 +13,8 @@
 		B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B82F6E6D1C4DEB2F001DA949 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		B82F6E7A1C4DECD0001DA949 /* KRSinaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */; };
 		B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */; };
+		B84E640C1C4F4B5D0085A7A9 /* RMSettingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B84E640B1C4F4B5D0085A7A9 /* RMSettingTableVC.m */; };
+		B84E64121C4F787F0085A7A9 /* RMSetMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B84E64111C4F787F0085A7A9 /* RMSetMyProfilesVC.m */; };
 		B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */; };
 		B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3241C48F5EA00E3F74A /* RMFriendCell.m */; };
 		B856E3291C48FC6700E3F74A /* RMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3281C48FC6700E3F74A /* RMUserInfo.m */; };
@@ -176,7 +178,6 @@
 		B856E55A1C49122B00E3F74A /* MyPofiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B856E5591C49122B00E3F74A /* MyPofiles.storyboard */; };
 		B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E55F1C491B9F00E3F74A /* RMSportVC.m */; };
 		B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3141C4A142700125004 /* RMSportTopic.m */; };
-		B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF31A1C4A1A6400125004 /* RMSetViewController.m */; };
 		B88EF3241C4A2B0F00125004 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */; };
 		B88EF3291C4A2B4200125004 /* RMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3271C4A2B4200125004 /* RMLoginViewController.m */; };
 		B88EF3311C4A2B8B00125004 /* RMWebRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3301C4A2B8B00125004 /* RMWebRegister.m */; };
@@ -217,6 +218,10 @@
 		B82F6E731C4DECD0001DA949 /* KRSinaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSinaLoginViewController.h; sourceTree = "<group>"; };
 		B82F6E741C4DECD0001DA949 /* KRSinaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSinaLoginViewController.m; sourceTree = "<group>"; };
 		B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		B84E640A1C4F4B5D0085A7A9 /* RMSettingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSettingTableVC.h; sourceTree = "<group>"; };
+		B84E640B1C4F4B5D0085A7A9 /* RMSettingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSettingTableVC.m; sourceTree = "<group>"; };
+		B84E64101C4F787F0085A7A9 /* RMSetMyProfilesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetMyProfilesVC.h; sourceTree = "<group>"; };
+		B84E64111C4F787F0085A7A9 /* RMSetMyProfilesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetMyProfilesVC.m; sourceTree = "<group>"; };
 		B856E31D1C48F52500E3F74A /* RMFriendTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendTableVC.h; sourceTree = "<group>"; };
 		B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMFriendTableVC.m; sourceTree = "<group>"; };
 		B856E3231C48F5EA00E3F74A /* RMFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendCell.h; sourceTree = "<group>"; };
@@ -553,8 +558,6 @@
 		B856E55F1C491B9F00E3F74A /* RMSportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportVC.m; sourceTree = "<group>"; };
 		B88EF3131C4A142700125004 /* RMSportTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportTopic.h; sourceTree = "<group>"; };
 		B88EF3141C4A142700125004 /* RMSportTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportTopic.m; sourceTree = "<group>"; };
-		B88EF3191C4A1A6400125004 /* RMSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetViewController.h; sourceTree = "<group>"; };
-		B88EF31A1C4A1A6400125004 /* RMSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetViewController.m; sourceTree = "<group>"; };
 		B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		B88EF3261C4A2B4200125004 /* RMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLoginViewController.h; sourceTree = "<group>"; };
 		B88EF3271C4A2B4200125004 /* RMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLoginViewController.m; sourceTree = "<group>"; };
@@ -1600,8 +1603,10 @@
 			children = (
 				B856E5561C49111400E3F74A /* RMMyProfilesVC.h */,
 				B856E5571C49111400E3F74A /* RMMyProfilesVC.m */,
-				B88EF3191C4A1A6400125004 /* RMSetViewController.h */,
-				B88EF31A1C4A1A6400125004 /* RMSetViewController.m */,
+				B84E640A1C4F4B5D0085A7A9 /* RMSettingTableVC.h */,
+				B84E640B1C4F4B5D0085A7A9 /* RMSettingTableVC.m */,
+				B84E64101C4F787F0085A7A9 /* RMSetMyProfilesVC.h */,
+				B84E64111C4F787F0085A7A9 /* RMSetMyProfilesVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2131,7 +2136,6 @@
 				B856E36F1C48FD5300E3F74A /* SDWebImagePrefetcher.m in Sources */,
 				B856E4DF1C48FD5F00E3F74A /* XMPPUserCoreDataStorageObject.m in Sources */,
 				DB6D17741C4E20E400FCD663 /* RMTelRegisterViewController.m in Sources */,
-				B88EF31B1C4A1A6400125004 /* RMSetViewController.m in Sources */,
 				B856E52B1C48FD5F00E3F74A /* NSXMLElement+XEP_0297.m in Sources */,
 				B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */,
 				B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */,
@@ -2146,6 +2150,7 @@
 				B856E4F61C48FD5F00E3F74A /* XMPPMessage+XEP0045.m in Sources */,
 				B856E5311C48FD5F00E3F74A /* RFImageToDataTransformer.m in Sources */,
 				B856E4E01C48FD5F00E3F74A /* XMPPResourceMemoryStorageObject.m in Sources */,
+				B84E64121C4F787F0085A7A9 /* RMSetMyProfilesVC.m in Sources */,
 				B856E4F81C48FD5F00E3F74A /* XMPPRoom.m in Sources */,
 				B856E4C71C48FD5F00E3F74A /* XMPPDigestMD5Authentication.m in Sources */,
 				B856E5061C48FD5F00E3F74A /* NSXMLElement+XEP_0059.m in Sources */,
@@ -2170,6 +2175,7 @@
 				B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */,
 				B856E4FB1C48FD5F00E3F74A /* XMPPvCardCoreDataStorage.m in Sources */,
 				B856E4EF1C48FD5F00E3F74A /* XMPPRoomHybrid.xcdatamodeld in Sources */,
+				B84E640C1C4F4B5D0085A7A9 /* RMSettingTableVC.m in Sources */,
 				B856E4CA1C48FD5F00E3F74A /* XMPPXOAuth2Google.m in Sources */,
 				B856E5241C48FD5F00E3F74A /* XMPPPing.m in Sources */,
 				B856E4E61C48FD5F00E3F74A /* XMPPIQ+JabberRPCResonse.m in Sources */,

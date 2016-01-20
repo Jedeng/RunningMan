@@ -46,9 +46,8 @@
     
     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"])
     {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        self.window.rootViewController = storyboard.instantiateInitialViewController;
-//        [self setupNavigationController];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
     }
     else
     {
@@ -92,8 +91,8 @@
 - (void) setThem
 {
     UINavigationBar *bar = [UINavigationBar appearance];
-    [bar setBackgroundImage:[UIImage imageNamed:@"矩形"] forBarMetrics:UIBarMetricsDefault];
-    bar.barStyle = UIBarStyleBlack;
+    [bar setBackgroundImage:[UIImage imageNamed:@"矩形-2-副本"] forBarMetrics:UIBarMetricsDefault];
+    bar.barStyle = UIBarStyleDefault;
     bar.tintColor = [UIColor purpleColor];
 }
 

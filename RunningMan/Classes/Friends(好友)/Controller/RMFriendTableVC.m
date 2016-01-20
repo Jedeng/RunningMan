@@ -11,10 +11,10 @@
 #import "RMXMPPTool.h"
 #import "RMFriendCell.h"
 #import "UIImageView+RMRoundImageView.h"
-
+//#import "RMChatViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "UIBarButtonItem+Item.h"
-
+#import "RMSetViewController.h"
 
 
 /** 结果控制器代理 */
@@ -37,6 +37,7 @@
     
     /** 加载好友列表:  */
     [self loadFriendsList];
+
 }
 
 - (void) loadFriendsList
@@ -79,7 +80,9 @@
     [super viewDidLoad];
     
     [self setupLeftBarBtn];
-    
+
+    /** 创建添加好友按钮 */
+    [self setupRightBarBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -188,5 +191,36 @@
 {
     [[self mm_drawerController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
+
+- (void) setupRightBarBtn
+{
+    UIBarButtonItem *addFriendItem = [[UIBarButtonItem alloc] initWithTitle: @"添加"
+                                                                                                             style: UIBarButtonItemStylePlain
+                                                                                                           target: self
+                                                                                                          action: @selector(showAddFriendView)];
+    self.navigationItem.rightBarButtonItem = addFriendItem;
+}
+- (void) showAddFriendView
+{
+//    RMSetViewController *setView = [RMSetViewController new];
+//    [self.navigationController pushViewController:setView animated:YES];
+}
+
 #pragma mark - 朋友界面与聊天界面之间跳转的正向传值
+//
+///* 选中谁和谁聊天 */
+//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    XMPPUserCoreDataStorageObject *roser = self.fetchController.fetchedObjects[indexPath.row];
+//    [self performSegueWithIdentifier:@"chatSegue" sender:roser.jid];
+//}
+///* 把好友的jid传入下一个控制器 */
+//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    id vc = segue.destinationViewController;
+//    if ([vc isKindOfClass:[RMChatViewController class]]) {
+//        RMChatViewController *chatVc = (RMChatViewController *)vc;
+//        chatVc.friendJid = sender;
+//    }
+//}
 @end

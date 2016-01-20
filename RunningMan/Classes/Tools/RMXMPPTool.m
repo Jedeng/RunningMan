@@ -21,7 +21,7 @@
 @interface RMXMPPTool () <XMPPStreamDelegate,XMPPRosterDelegate>
 {
     RMResultBlock  _resultBlock;
-    XMPPReconnect *_reconnect;// 自动连接模块
+//    XMPPReconnect *_reconnect;// 自动连接模块
 }
 
 /** 好友请求的用户的 Jid */
@@ -60,8 +60,8 @@ singleton_implementation(RMXMPPTool)
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
     //自动连接模块
-    _reconnect = [[XMPPReconnect alloc] init];
-    [_reconnect activate:_xmppStream];
+//    _reconnect = [[XMPPReconnect alloc] init];
+//    [_reconnect activate:_xmppStream];
     
     /** 给电子名片模块和头像模块赋值 */
     self.xmppvCardStore = [XMPPvCardCoreDataStorage sharedInstance];
@@ -155,7 +155,7 @@ singleton_implementation(RMXMPPTool)
     [_xmppStream removeDelegate:self];
     
     // 停止模块
-    [_reconnect deactivate]; //自动连接
+//    [_reconnect deactivate]; //自动连接
     [_xmppvCard deactivate];
     [_xmppvCardAvar deactivate];
     [_xmppRoster deactivate];
@@ -165,7 +165,7 @@ singleton_implementation(RMXMPPTool)
     [_xmppStream disconnect];
     
     // 清空资源
-    _reconnect = nil;
+//    _reconnect = nil;
     _xmppvCard = nil;
     _xmppvCardStore = nil;
     _xmppvCardAvar = nil;
@@ -327,10 +327,10 @@ singleton_implementation(RMXMPPTool)
     self.fJid = jid;
     NSString *title = [NSString stringWithFormat:@"%@想申请加好友",jidStr];
     UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle: title
-                                                           delegate: self
-                                                  cancelButtonTitle: @"取消"
-                                             destructiveButtonTitle: @"同意"
-                                                  otherButtonTitles: @"同意并添加对方为好友", nil];
+                                                                                        delegate: self
+                                                                         cancelButtonTitle: @"取消"
+                                                                  destructiveButtonTitle: @"同意"
+                                                                         otherButtonTitles: @"同意并添加对方为好友", nil];
     
     [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
     

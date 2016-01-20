@@ -11,7 +11,7 @@
 #import "RMXMPPTool.h"
 #import "XMPPvCardTemp.h"
 #import "UIImageView+RMRoundImageView.h"
-#import "RMSetViewController.h"
+
 
 
 @interface RMMyProfilesVC ()
@@ -73,10 +73,5 @@
 
 
 
-- (IBAction)EditMyPofilesBtn:(id)sender
-{
-    RMSetViewController *setVC = [[RMSetViewController alloc]init];
-    [self.navigationController pushViewController:setVC animated:YES];
-}
 
 @end
