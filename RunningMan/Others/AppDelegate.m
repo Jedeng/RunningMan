@@ -7,17 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "RMUserInfo.h"
+#import "RMXMPPTool.h"
 #import "RMMyProfilesVC.h"
 #import "MMDrawerController.h"  /** 侧滑三方 */
-#import "RMUserInfo.h"
+#import <TencentOpenAPI/TencentOAuth.h>  /**  qq登录 */
+#import <SMS_SDK/SMSSDK.h>  mmm                 /**  手机短信验证注册 */
 
-#import "RMXMPPTool.h"
 
-/**  qq登录 */
-#import <TencentOpenAPI/TencentOAuth.h>
-
-/**  手机短信验证注册 */
-#import <SMS_SDK/SMSSDK.h>
 #define appKey    @"e8a9b25abf88"
 #define appSecret @"d5fc7fd3604b73c27f3156be12d7525b"
 
@@ -51,6 +48,8 @@
     }
     else
     {
+        [self setupNavigationController];
+        
         [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
         __weak typeof(self) loginVC = self;
         [[RMXMPPTool sharedRMXMPPTool] userLogin:^(RMXMPPResultType type) {
@@ -74,7 +73,7 @@
 {
     switch (type) {
         case RMXMPPResultTypeLoginSuccess:
-            [self setupNavigationController];
+            
             break;
         case RMXMPPResultTypeLoginFailure:
         {

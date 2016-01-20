@@ -7,8 +7,10 @@
 //
 
 #import "RMSetMyProfilesVC.h"
+#import "RMSetMyPofilesTableViewCell.h"
 
-@interface RMSetMyProfilesVC ()
+@interface RMSetMyProfilesVC ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic, strong) NSArray *firstArr;
 @property (nonatomic, strong) NSArray *secondArr;
 @property (nonatomic, strong) NSArray *thirdArr;
@@ -43,11 +45,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,13 +79,27 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell new];
-#pragma TODO: 自定义修改界面的 cell
-    cell.textLabel.text = @"test";
-    
+     RMSetMyPofilesTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:@"SetMyPofilesCell" forIndexPath:indexPath];
+    if (indexPath.section == 0 )
+    {
+        cell.label.text = self.firstArr[indexPath.row];
+    }
+    else if (indexPath.section == 1)
+    {
+        cell.label.text = self.secondArr[indexPath.row];
+    }
+    else
+    {
+        cell.label.text = self.thirdArr[indexPath.row];
+    }
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+    return view;
+}
 
 /*
 // Override to support conditional editing of the table view.

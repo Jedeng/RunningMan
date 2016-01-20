@@ -15,6 +15,8 @@
 		B82F6E801C4DF7E5001DA949 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82F6E7F1C4DF7E5001DA949 /* TencentOpenAPI.framework */; };
 		B84E640C1C4F4B5D0085A7A9 /* RMSettingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B84E640B1C4F4B5D0085A7A9 /* RMSettingTableVC.m */; };
 		B84E64121C4F787F0085A7A9 /* RMSetMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B84E64111C4F787F0085A7A9 /* RMSetMyProfilesVC.m */; };
+		B84E64161C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B84E64141C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.m */; };
+		B84E64171C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84E64151C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.xib */; };
 		B856E31F1C48F52500E3F74A /* RMFriendTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */; };
 		B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3241C48F5EA00E3F74A /* RMFriendCell.m */; };
 		B856E3291C48FC6700E3F74A /* RMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E3281C48FC6700E3F74A /* RMUserInfo.m */; };
@@ -222,6 +224,9 @@
 		B84E640B1C4F4B5D0085A7A9 /* RMSettingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSettingTableVC.m; sourceTree = "<group>"; };
 		B84E64101C4F787F0085A7A9 /* RMSetMyProfilesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetMyProfilesVC.h; sourceTree = "<group>"; };
 		B84E64111C4F787F0085A7A9 /* RMSetMyProfilesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetMyProfilesVC.m; sourceTree = "<group>"; };
+		B84E64131C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSetMyPofilesTableViewCell.h; sourceTree = "<group>"; };
+		B84E64141C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSetMyPofilesTableViewCell.m; sourceTree = "<group>"; };
+		B84E64151C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMSetMyPofilesTableViewCell.xib; sourceTree = "<group>"; };
 		B856E31D1C48F52500E3F74A /* RMFriendTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendTableVC.h; sourceTree = "<group>"; };
 		B856E31E1C48F52500E3F74A /* RMFriendTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMFriendTableVC.m; sourceTree = "<group>"; };
 		B856E3231C48F5EA00E3F74A /* RMFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFriendCell.h; sourceTree = "<group>"; };
@@ -1621,6 +1626,9 @@
 		B856E5551C4910E300E3F74A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B84E64131C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.h */,
+				B84E64141C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.m */,
+				B84E64151C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2101,6 +2109,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84E64171C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.xib in Resources */,
 				B82F6E6F1C4DEB30001DA949 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				B8E16B991C48E1A10029B86C /* Main.storyboard in Resources */,
 				B8E16BEE1C48EA0E0029B86C /* mapapi.bundle in Resources */,
@@ -2217,6 +2226,7 @@
 				B856E51B1C48FD5F00E3F74A /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
 				B8E16C051C48EA690029B86C /* UIViewController+MMDrawerController.m in Sources */,
 				B856E51F1C48FD5F00E3F74A /* XMPPPresence+XEP_0172.m in Sources */,
+				B84E64161C4FA1600085A7A9 /* RMSetMyPofilesTableViewCell.m in Sources */,
 				B856E4CE1C48FD5F00E3F74A /* XMPPElement.m in Sources */,
 				B856E3721C48FD5300E3F74A /* UIImage+MultiFormat.m in Sources */,
 				B856E5081C48FD5F00E3F74A /* XMPPIQ+XEP_0060.m in Sources */,
