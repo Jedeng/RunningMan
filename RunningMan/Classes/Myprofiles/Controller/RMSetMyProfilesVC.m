@@ -48,6 +48,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.title = @"个人资料";
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 }
 
@@ -78,27 +80,11 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     RMSetMyPofilesTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:@"SetMyPofilesCell" forIndexPath:indexPath];
-    if (indexPath.section == 0 )
-    {
-        cell.label.text = self.firstArr[indexPath.row];
-    }
-    else if (indexPath.section == 1)
-    {
-        cell.label.text = self.secondArr[indexPath.row];
-    }
-    else
-    {
-        cell.label.text = self.thirdArr[indexPath.row];
-    }
-    return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
-    return view;
+    RMSetMyPofilesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SetMyPofilesCell"];
+    
+    return cell;
 }
 
 /*

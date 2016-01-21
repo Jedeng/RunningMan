@@ -12,7 +12,7 @@
 #import "RMMyProfilesVC.h"
 #import "MMDrawerController.h"  /** 侧滑三方 */
 #import <TencentOpenAPI/TencentOAuth.h>  /**  qq登录 */
-#import <SMS_SDK/SMSSDK.h>  mmm                 /**  手机短信验证注册 */
+#import <SMS_SDK/SMSSDK.h> /**  手机短信验证注册 */
 
 
 #define appKey    @"e8a9b25abf88"
