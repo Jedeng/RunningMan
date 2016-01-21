@@ -41,7 +41,16 @@
     /**  注册应用 */
     [SMSSDK registerApp:appKey withSecret:appSecret];
     
+<<<<<<< Updated upstream
     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"])
+=======
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"]) {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
+        
+    }else
+>>>>>>> Stashed changes
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
         self.window.rootViewController = storyboard.instantiateInitialViewController;
@@ -75,6 +84,8 @@
         case RMXMPPResultTypeLoginSuccess:
             
             break;
+        case RMXMPPResultTypeNetError:
+            MYLog(@"网络错误");
         case RMXMPPResultTypeLoginFailure:
         {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];

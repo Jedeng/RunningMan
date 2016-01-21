@@ -92,7 +92,7 @@ singleton_implementation(RMXMPPTool)
         [self setXmpp];
     }
     /** 给xmppStream 做一些属性的赋值 */
-    self.xmppStream.hostName = RMXMPPHOSTNAME;
+    self.xmppStream.hostName = RMXMPPDOMAIN;
     self.xmppStream.hostPort = RMXMPPPOST;
     /** 构建一个jid 根据登录名还是注册名 */
     NSString *uname = nil;
@@ -139,6 +139,7 @@ singleton_implementation(RMXMPPTool)
     /** 默认代表在线 */
     XMPPPresence *presence = [XMPPPresence presence];
     [self.xmppStream sendElement:presence];
+      MYLog(@"登录成功");
 }
 
 /** 退出登录,发送离线消息 */
@@ -255,11 +256,11 @@ singleton_implementation(RMXMPPTool)
     }
 }
 
--(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
-    //XMPPPresence 在线 离线
-    
-    //presence.from 消息是谁发送过来
-}
+//-(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+//    //XMPPPresence 在线 离线
+//    
+//    //presence.from 消息是谁发送过来
+//}
 
 -(void)dealloc{
 //    [self teardownXmpp];
