@@ -106,7 +106,6 @@
     userInfo.userName = self.userNameTextField.text;
     userInfo.userPassword = self.userPasswordTextField.text;
     userInfo.registerType = NO;
-    userInfo.userEverLogin = YES;
     
     // 点击登录按钮 调用工具的登录方法
     __weak  typeof(self) vc = self;
@@ -122,8 +121,8 @@
     switch (type) {
         case RMXMPPResultTypeLoginSuccess:
         {
-            MYLog(@"登录成功");
-            
+            MYLog(@"-----登录成功-----");
+            [RMUserInfo sharedRMUserInfo].userEverLogin = YES;
             [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
             // 切换到主界面
             UIStoryboard *stroyborad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

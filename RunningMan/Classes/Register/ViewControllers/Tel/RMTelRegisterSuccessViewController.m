@@ -63,15 +63,11 @@
     user.registerName = user.userName;
     user.registerPassword = pwd1;
     user.userPassword = pwd1;
-//    user.userEverLogin = YES;
     user.registerType = YES;
-     MYLog(@"before:%@ -- %@ -- %d",user.userName,user.userPassword,user.userEverLogin);
     [user saveUserInfoToSandbox];
     
     // 向服务器 发起一个web注册 产生web账号
     [[RMWebRegister sharedRMWebRegister] webRegister];
-    [user loadUserInfoFromSandbox];
-    MYLog(@"after:%@ -- %@ -- %d",user.userName,user.userPassword,user.userEverLogin);
     
     /**  验证成功 则自动登录以及保存信息 ,注意隐藏 */
     [MBProgressHUD showMessage:@"正在注册，请等待..."];

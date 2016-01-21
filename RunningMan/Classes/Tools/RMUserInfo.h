@@ -25,7 +25,7 @@ singleton_interface(RMUserInfo)
 @property (nonatomic, strong) NSString *jidStr;
 
 /**  判断是否是注册成功过，是则从沙盒取密码，不用输密码 */
-@property (nonatomic,assign,getter=isEverRegister) BOOL everRegister;
+//@property (nonatomic,assign,getter=isEverRegister) BOOL everRegister;
 
 
 /** 新浪登陆 */

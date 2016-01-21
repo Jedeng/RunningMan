@@ -14,8 +14,18 @@
 /** XMPP 工具类中需要的相关宏 */
 #import <UIKit/UIKit.h>
 #define     RMXMPPDOMAIN           @"tarena.com"
+<<<<<<< Updated upstream
 #define     RMXMPPHOSTNAME      @"124.207.192.18"
 //#define     RMXMPPHOSTNAME      @"127.0.0.1"
+=======
+//<<<<<<< HEAD
+//#define     RMXMPPHOSTNAME      @"124.207.192.18"
+#define     RMXMPPHOSTNAME      @"127.0.0.1"
+//=======
+//#define     RMXMPPHOSTNAME      @"124.207.192.18"
+//#define     RMXMPPHOSTNAME      @"127.0.0.1"
+//>>>>>>> origin/master
+>>>>>>> Stashed changes
 #define     RMXMPPPOST                 5222
 #endif /* PrefixHeader_pch */
 
