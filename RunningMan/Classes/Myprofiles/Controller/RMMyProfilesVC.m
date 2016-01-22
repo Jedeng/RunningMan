@@ -55,19 +55,7 @@
 
 - (IBAction)logoutBtn:(id)sender
 {
-//    [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
-//    [[RMXMPPTool sharedRMXMPPTool] sendOffLine];
-//    [RMUserInfo sharedRMUserInfo].jidStr = nil;
-//    
-//    if ([RMUserInfo sharedRMUserInfo].sinaLogin)
-//    {
-//        [RMUserInfo sharedRMUserInfo].sinaLogin = NO;
-//        [RMUserInfo sharedRMUserInfo].userName = nil;
-//    }
-//    
-//    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *vc = [mainSB instantiateInitialViewController];
-//    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+
     [[RMXMPPTool sharedRMXMPPTool] userLogout ];
 }
 
