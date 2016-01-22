@@ -12,7 +12,10 @@
 #import "RMMyProfilesVC.h"
 #import "MMDrawerController.h"  /** 侧滑三方 */
 #import <TencentOpenAPI/TencentOAuth.h>  /**  qq登录 */
+<<<<<<< HEAD
 #import <SMS_SDK/SMSSDK.h> /**  手机短信验证注册 */
+=======
+>>>>>>> origin/master
 
 
 #define appKey    @"e8a9b25abf88"
@@ -38,8 +41,7 @@
                                                                                                                        categories: nil];
         [application registerUserNotificationSettings:settings];
     }
-    /**  注册应用 */
-    [SMSSDK registerApp:appKey withSecret:appSecret];
+
     
 
     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"userEverLogin"]) {
@@ -47,9 +49,13 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
         self.window.rootViewController = storyboard.instantiateInitialViewController;
         
+<<<<<<< HEAD
     }
     else
     {
+=======
+    }else{
+>>>>>>> origin/master
         [self setupNavigationController];
         
         [[RMUserInfo sharedRMUserInfo] loadUserInfoFromSandbox];
@@ -127,6 +133,10 @@
 #pragma mark - QQ登录注册
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
+    return [TencentOAuth HandleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [TencentOAuth HandleOpenURL:url];
 }
 
