@@ -11,6 +11,7 @@
 #import "RMUserInfo.h"
 #import "RMXMPPTool.h"
 #import "RMWebRegister.h"
+#import "AppDelegate.h"
 
 @interface RMRegisterViewController ()
 {
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.registerButton.userInteractionEnabled = NO;
-    self.registerButton.alpha = 0.4;
+    self.registerButton.alpha = 0.5;
     
     /** 背景图片动画部分 */
     _bgImageArray = @[ [UIImage imageNamed:@"image1.jpg"],
@@ -47,23 +48,35 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 #pragma  mark - 密码有输入
+- (IBAction)userNameTextField:(id)sender {
+    [self passwordTextFieldEditingDidChange:nil];
+}
 - (IBAction)passwordTextFieldEditingDidChange:(id)sender {
-    if (self.userPasswordTextField.text.length == 0) {
-        return;
+    
+    if (self.userNameTextField.text.length == 0) {
+        [MBProgressHUD showError:@"请输入用户名"];
+    }
+    self.registerButton.userInteractionEnabled = NO;
+    self.registerButton.alpha = 0.3;
+    
+    if (self.userPasswordTextField.text.length >= 6 &&
+        self.userNameTextField.text.length != 0) {
+        
+        self.registerButton.userInteractionEnabled = YES;
+        self.registerButton.alpha = 1.0;
+        self.registerButton.layer.cornerRadius = 8;
+        self.registerButton.layer.borderWidth = 3;
+        self.registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        [self.registerButton setBackgroundColor:[UIColor whiteColor]];
     }
     
-    if (self.userPasswordTextField.text.length == 0) {
-        self.registerButton.userInteractionEnabled = NO;
-        self.registerButton.alpha = 0.4;
-    }
-    
-    self.registerButton.userInteractionEnabled = YES;
-    self.registerButton.alpha = 1.0;
+ 
 }
 
 - (IBAction)registerButtonClick:(id)sender {
-    if (self.userPasswordTextField.text.length == 0) {
+    if (self.userNameTextField.text.length == 0) {
         [MBProgressHUD showError:@"请输入用户名"];
         return;
     }
@@ -129,8 +142,12 @@
              MYLog(@"注册登录成功");
             [RMUserInfo sharedRMUserInfo].userEverLogin = YES;
             [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
+            
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
+            
+            AppDelegate *app = [UIApplication sharedApplication].delegate;
+            [app setupNavigationController];
             break;
         }
         default:
@@ -152,7 +169,11 @@
     [UIView transitionWithView:self.bgImageView duration:3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         self.bgImageView.image = image;
     } completion:nil];
-    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

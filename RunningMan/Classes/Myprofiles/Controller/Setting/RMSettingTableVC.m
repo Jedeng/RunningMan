@@ -101,14 +101,14 @@
 - (void) setupLeftBarBtn
 {
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemReply
-                                                                              target: self
-                                                                              action: @selector(dismissLastView)];
+                                                                                                                            target: self
+                                                                                                                           action: @selector(dismissLastView)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 - (void)dismissLastView{
     
-//    [self setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

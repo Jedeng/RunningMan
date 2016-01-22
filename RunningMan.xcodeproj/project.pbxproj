@@ -177,6 +177,11 @@
 		B856E5581C49111400E3F74A /* RMMyProfilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E5571C49111400E3F74A /* RMMyProfilesVC.m */; };
 		B856E55A1C49122B00E3F74A /* MyPofiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B856E5591C49122B00E3F74A /* MyPofiles.storyboard */; };
 		B856E5601C491B9F00E3F74A /* RMSportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E55F1C491B9F00E3F74A /* RMSportVC.m */; };
+		B88972A21C523ACE0099425A /* RMSportRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B889729D1C523ACE0099425A /* RMSportRecordVC.m */; };
+		B88972A31C523ACE0099425A /* RMSportRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B88972A01C523ACE0099425A /* RMSportRecord.m */; };
+		B88972A61C523B060099425A /* RMSportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B88972A51C523B060099425A /* RMSportRecordCell.m */; };
+		B88972AE1C5241280099425A /* RMMyMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88972AD1C5241280099425A /* RMMyMsgViewController.m */; };
+		B88972B11C52417F0099425A /* RMLastMsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B88972B01C52417F0099425A /* RMLastMsgTableViewCell.m */; };
 		B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3141C4A142700125004 /* RMSportTopic.m */; };
 		B88EF3241C4A2B0F00125004 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */; };
 		B88EF3291C4A2B4200125004 /* RMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EF3271C4A2B4200125004 /* RMLoginViewController.m */; };
@@ -557,6 +562,17 @@
 		B856E5591C49122B00E3F74A /* MyPofiles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPofiles.storyboard; sourceTree = "<group>"; };
 		B856E55E1C491B9F00E3F74A /* RMSportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportVC.h; sourceTree = "<group>"; };
 		B856E55F1C491B9F00E3F74A /* RMSportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportVC.m; sourceTree = "<group>"; };
+		B889729C1C523ACE0099425A /* RMSportRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportRecordVC.h; sourceTree = "<group>"; };
+		B889729D1C523ACE0099425A /* RMSportRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportRecordVC.m; sourceTree = "<group>"; };
+		B889729F1C523ACE0099425A /* RMSportRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportRecord.h; sourceTree = "<group>"; };
+		B88972A01C523ACE0099425A /* RMSportRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportRecord.m; sourceTree = "<group>"; };
+		B88972A41C523B060099425A /* RMSportRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportRecordCell.h; sourceTree = "<group>"; };
+		B88972A51C523B060099425A /* RMSportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportRecordCell.m; sourceTree = "<group>"; };
+		B88972A71C523BB60099425A /* sportType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sportType.h; sourceTree = "<group>"; };
+		B88972AC1C5241280099425A /* RMMyMsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMyMsgViewController.h; sourceTree = "<group>"; };
+		B88972AD1C5241280099425A /* RMMyMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMyMsgViewController.m; sourceTree = "<group>"; };
+		B88972AF1C52417F0099425A /* RMLastMsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLastMsgTableViewCell.h; sourceTree = "<group>"; };
+		B88972B01C52417F0099425A /* RMLastMsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLastMsgTableViewCell.m; sourceTree = "<group>"; };
 		B88EF3131C4A142700125004 /* RMSportTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSportTopic.h; sourceTree = "<group>"; };
 		B88EF3141C4A142700125004 /* RMSportTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSportTopic.m; sourceTree = "<group>"; };
 		B88EF3231C4A2B0F00125004 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
@@ -1601,7 +1617,9 @@
 			children = (
 				B856E5561C49111400E3F74A /* RMMyProfilesVC.h */,
 				B856E5571C49111400E3F74A /* RMMyProfilesVC.m */,
-				B8AE9FCE1C50F9B300FE60E8 /* Setting */,
+				B889729A1C523ACE0099425A /* SportRecord(运动记录) */,
+				B88972A81C5240010099425A /* MyMsg(我的消息) */,
+				B8AE9FCE1C50F9B300FE60E8 /* Setting(设置) */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1635,6 +1653,7 @@
 		B856E55C1C491B8100E3F74A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B88972A71C523BB60099425A /* sportType.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1642,6 +1661,72 @@
 		B856E55D1C491B8100E3F74A /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B889729A1C523ACE0099425A /* SportRecord(运动记录) */ = {
+			isa = PBXGroup;
+			children = (
+				B889729B1C523ACE0099425A /* Controller */,
+				B889729E1C523ACE0099425A /* Model */,
+				B88972A11C523ACE0099425A /* View */,
+			);
+			name = "SportRecord(运动记录)";
+			path = SportRecord;
+			sourceTree = "<group>";
+		};
+		B889729B1C523ACE0099425A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B889729C1C523ACE0099425A /* RMSportRecordVC.h */,
+				B889729D1C523ACE0099425A /* RMSportRecordVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B889729E1C523ACE0099425A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B889729F1C523ACE0099425A /* RMSportRecord.h */,
+				B88972A01C523ACE0099425A /* RMSportRecord.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B88972A11C523ACE0099425A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B88972A41C523B060099425A /* RMSportRecordCell.h */,
+				B88972A51C523B060099425A /* RMSportRecordCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B88972A81C5240010099425A /* MyMsg(我的消息) */ = {
+			isa = PBXGroup;
+			children = (
+				B88972A91C5240010099425A /* Controller */,
+				B88972AB1C5240010099425A /* View */,
+			);
+			name = "MyMsg(我的消息)";
+			path = MyMsg;
+			sourceTree = "<group>";
+		};
+		B88972A91C5240010099425A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B88972AC1C5241280099425A /* RMMyMsgViewController.h */,
+				B88972AD1C5241280099425A /* RMMyMsgViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B88972AB1C5240010099425A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B88972AF1C52417F0099425A /* RMLastMsgTableViewCell.h */,
+				B88972B01C52417F0099425A /* RMLastMsgTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1713,16 +1798,17 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
-		B8AE9FCE1C50F9B300FE60E8 /* Setting */ = {
+		B8AE9FCE1C50F9B300FE60E8 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
-				B8AE9FD11C50F9FF00FE60E8 /* RMSetMyProfilesVC.h */,
-				B8AE9FD21C50F9FF00FE60E8 /* RMSetMyProfilesVC.m */,
 				B8AE9FD31C50F9FF00FE60E8 /* RMSettingTableVC.h */,
 				B8AE9FD41C50F9FF00FE60E8 /* RMSettingTableVC.m */,
+				B8AE9FD11C50F9FF00FE60E8 /* RMSetMyProfilesVC.h */,
+				B8AE9FD21C50F9FF00FE60E8 /* RMSetMyProfilesVC.m */,
 				B8AE9FCF1C50F9FF00FE60E8 /* RMAboutUsVC.h */,
 				B8AE9FD01C50F9FF00FE60E8 /* RMAboutUsVC.m */,
 			);
+			name = "Setting(设置)";
 			path = Setting;
 			sourceTree = "<group>";
 		};
@@ -2140,12 +2226,14 @@
 				B856E36E1C48FD5300E3F74A /* SDWebImageManager.m in Sources */,
 				B856E5391C48FD5F00E3F74A /* DDLog.m in Sources */,
 				B88EF3151C4A142700125004 /* RMSportTopic.m in Sources */,
+				B88972AE1C5241280099425A /* RMMyMsgViewController.m in Sources */,
 				B856E53E1C48FD5F00E3F74A /* NSString+DDXML.m in Sources */,
 				B856E36A1C48FD5300E3F74A /* SDWebImageCompat.m in Sources */,
 				B856E36F1C48FD5300E3F74A /* SDWebImagePrefetcher.m in Sources */,
 				B8AE9FD71C50F9FF00FE60E8 /* RMSettingTableVC.m in Sources */,
 				B856E4DF1C48FD5F00E3F74A /* XMPPUserCoreDataStorageObject.m in Sources */,
 				B856E52B1C48FD5F00E3F74A /* NSXMLElement+XEP_0297.m in Sources */,
+				B88972A21C523ACE0099425A /* RMSportRecordVC.m in Sources */,
 				B856E5511C49076D00E3F74A /* UIImageView+RMRoundImageView.m in Sources */,
 				B856E3251C48F5EA00E3F74A /* RMFriendCell.m in Sources */,
 				B856E3691C48FD5300E3F74A /* SDImageCache.m in Sources */,
@@ -2160,6 +2248,7 @@
 				B856E5311C48FD5F00E3F74A /* RFImageToDataTransformer.m in Sources */,
 				B856E4E01C48FD5F00E3F74A /* XMPPResourceMemoryStorageObject.m in Sources */,
 				B856E4F81C48FD5F00E3F74A /* XMPPRoom.m in Sources */,
+				B88972A61C523B060099425A /* RMSportRecordCell.m in Sources */,
 				B8AE9FD61C50F9FF00FE60E8 /* RMSetMyProfilesVC.m in Sources */,
 				B856E4C71C48FD5F00E3F74A /* XMPPDigestMD5Authentication.m in Sources */,
 				B856E5061C48FD5F00E3F74A /* NSXMLElement+XEP_0059.m in Sources */,
@@ -2222,6 +2311,7 @@
 				B856E4EC1C48FD5F00E3F74A /* XMPPRoomCoreDataStorage.m in Sources */,
 				B856E4E31C48FD5F00E3F74A /* XMPPRoster.m in Sources */,
 				B856E52D1C48FD5F00E3F74A /* XMPPMessage+XEP_0333.m in Sources */,
+				B88972A31C523ACE0099425A /* RMSportRecord.m in Sources */,
 				B856E51B1C48FD5F00E3F74A /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
 				B8E16C051C48EA690029B86C /* UIViewController+MMDrawerController.m in Sources */,
 				B856E51F1C48FD5F00E3F74A /* XMPPPresence+XEP_0172.m in Sources */,
@@ -2301,6 +2391,7 @@
 				B856E3751C48FD5300E3F74A /* UIImageView+WebCache.m in Sources */,
 				B856E4FF1C48FD5F00E3F74A /* XMPPvCardTempAdr.m in Sources */,
 				B856E4DD1C48FD5F00E3F74A /* XMPPRoster.xcdatamodel in Sources */,
+				B88972B11C52417F0099425A /* RMLastMsgTableViewCell.m in Sources */,
 				B8E16BF71C48EA5D0029B86C /* MBProgressHUD.m in Sources */,
 				B856E5141C48FD5F00E3F74A /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				B856E5371C48FD5F00E3F74A /* DDASLLogger.m in Sources */,

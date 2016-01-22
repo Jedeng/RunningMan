@@ -55,15 +55,7 @@
 
 - (IBAction)logoutBtn:(id)sender
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     [[RMXMPPTool sharedRMXMPPTool] userLogout ];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
-    RMLoginViewController *vc = [storyboard instantiateInitialViewController];
-    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
 }
 
 

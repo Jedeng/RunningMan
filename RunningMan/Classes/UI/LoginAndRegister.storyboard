@@ -34,7 +34,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="JPH-vb-CPe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="请输入密码" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-3A-ANS">
@@ -43,8 +43,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OeD-i2-2Eh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <animations/>
@@ -85,7 +85,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="&lt;&lt;忘记密码" backgroundImage="button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="forgetPasswordButtonClick:" destination="Khz-20-4bC" eventType="touchUpInside" id="fF1-e0-zqg"/>
@@ -100,7 +100,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="快速注册&gt;&gt;" backgroundImage="button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButtonClick:" destination="Khz-20-4bC" eventType="touchUpInside" id="9xM-Fx-16J"/>
@@ -255,7 +255,7 @@
             </objects>
             <point key="canvasLocation" x="-284.80000000000001" y="966.54666666666662"/>
         </scene>
-        <!--手机注册-->
+        <!--快速注册-->
         <scene sceneID="4ri-yP-gtu">
             <objects>
                 <viewController id="peX-J3-zqZ" customClass="RMRegisterViewController" sceneMemberID="viewController">
@@ -274,14 +274,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8V-sw-jDp">
                                 <rect key="frame" x="40" y="124" width="240" height="320"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gkf-tr-Lhc">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gkf-tr-Lhc">
                                         <rect key="frame" x="15" y="145" width="210" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Xja-nq-5xA"/>
                                             <constraint firstAttribute="width" constant="210" id="gI5-0S-7M4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="passwordTextFieldEditingDidChange:" destination="peX-J3-zqZ" eventType="editingChanged" id="oc3-xk-bbW"/>
@@ -294,22 +294,26 @@
                                             <constraint firstAttribute="width" constant="210" id="U4P-Pz-irB"/>
                                             <constraint firstAttribute="height" constant="30" id="peb-j6-QQW"/>
                                         </constraints>
-                                        <state key="normal" title="注册" backgroundImage="button">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="注册">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="registerButtonClick:" destination="peX-J3-zqZ" eventType="touchUpInside" id="GO2-Cf-afV"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号码" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-VW-lbd">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-VW-lbd">
                                         <rect key="frame" x="15" y="85" width="210" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="McU-2B-emy"/>
                                             <constraint firstAttribute="width" constant="210" id="sFc-H0-LOq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="userNameTextField:" destination="peX-J3-zqZ" eventType="editingChanged" id="RBk-ZY-tbn"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <animations/>
@@ -326,13 +330,13 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHX-Tj-LDt">
-                                <rect key="frame" x="20" y="20" width="80" height="30"/>
+                                <rect key="frame" x="10" y="20" width="80" height="32"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="SAJ-oa-Glh"/>
-                                    <constraint firstAttribute="height" constant="30" id="dtu-mQ-rzh"/>
+                                    <constraint firstAttribute="height" constant="32" id="O0V-cP-oqw"/>
+                                    <constraint firstAttribute="width" constant="80" id="VQM-Ou-DsB"/>
                                 </constraints>
-                                <state key="normal" title="取消">
+                                <state key="normal" title="取消" backgroundImage="button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -344,16 +348,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U8V-sw-jDp" firstAttribute="centerX" secondItem="M98-Gi-hXd" secondAttribute="centerX" id="42N-6A-sd6"/>
+                            <constraint firstItem="bHX-Tj-LDt" firstAttribute="leading" secondItem="M98-Gi-hXd" secondAttribute="leading" constant="10" id="92i-dT-Tw0"/>
+                            <constraint firstItem="bHX-Tj-LDt" firstAttribute="top" secondItem="xJj-gX-sG1" secondAttribute="bottom" constant="20" id="Sz7-vV-Jqq"/>
                             <constraint firstItem="tsZ-j1-1bI" firstAttribute="top" secondItem="KZx-gF-PTy" secondAttribute="bottom" id="XE6-f8-9Ag"/>
                             <constraint firstItem="KZx-gF-PTy" firstAttribute="leading" secondItem="M98-Gi-hXd" secondAttribute="leading" id="bak-fu-GWr"/>
-                            <constraint firstItem="bHX-Tj-LDt" firstAttribute="top" secondItem="M98-Gi-hXd" secondAttribute="top" constant="20" id="edo-yS-pcb"/>
                             <constraint firstItem="KZx-gF-PTy" firstAttribute="top" secondItem="xJj-gX-sG1" secondAttribute="bottom" constant="-20" id="eya-LW-lSS"/>
                             <constraint firstAttribute="trailing" secondItem="KZx-gF-PTy" secondAttribute="trailing" id="fdd-aH-QaI"/>
                             <constraint firstItem="U8V-sw-jDp" firstAttribute="centerY" secondItem="M98-Gi-hXd" secondAttribute="centerY" id="jX7-DC-SzI"/>
-                            <constraint firstItem="bHX-Tj-LDt" firstAttribute="leading" secondItem="M98-Gi-hXd" secondAttribute="leading" constant="20" id="xEc-rl-UC5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="手机注册" id="VQ9-0H-gg4"/>
+                    <navigationItem key="navigationItem" title="快速注册" id="VQ9-0H-gg4"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bgImageView" destination="KZx-gF-PTy" id="c0B-fS-VOp"/>

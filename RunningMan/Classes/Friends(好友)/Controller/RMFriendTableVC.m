@@ -104,7 +104,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *identifier = @"friendCell";
         RMFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-        
+    
+    if ( !cell)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    }
+    
         [cell.headerImage setRoundLayer];
         
         /** 从上面得到的对象中解析出朋友数据 */

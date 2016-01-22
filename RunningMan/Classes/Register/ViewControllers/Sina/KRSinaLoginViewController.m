@@ -21,6 +21,7 @@
 #import "RMXMPPTool.h"
 #import "RMWebRegister.h"
 #import "NSString+md5.h"
+#import "AppDelegate.h"
 
 @interface KRSinaLoginViewController()<UIWebViewDelegate>
 
@@ -120,6 +121,7 @@
             [RMUserInfo sharedRMUserInfo].userName = [RMUserInfo sharedRMUserInfo].registerName;
             [RMUserInfo sharedRMUserInfo].userPassword = [RMUserInfo sharedRMUserInfo].registerPassword;
             [RMUserInfo sharedRMUserInfo].registerType = NO;
+            [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
             [[RMXMPPTool sharedRMXMPPTool]userLogin:^(RMXMPPResultType type) {
                 [self handleLoginResultType:type];
             }];
@@ -143,14 +145,23 @@
             UIStoryboard *stroyborad =
             [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = stroyborad.instantiateInitialViewController;
+           
+            AppDelegate *app = [UIApplication sharedApplication].delegate;
+            [app setupNavigationController];
+            
             break;
         }
         case RMXMPPResultTypeLoginFailure:
             [MBProgressHUD showError:@"登录失败"];
-            break;
+          
         case RMXMPPResultTypeNetError:
+        {
             [MBProgressHUD showError:@"网络错误"];
+            UIStoryboard *stroyborad =
+            [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+            [UIApplication sharedApplication].keyWindow.rootViewController = stroyborad.instantiateInitialViewController;
             break;
+        }
         default:
             break;
     }

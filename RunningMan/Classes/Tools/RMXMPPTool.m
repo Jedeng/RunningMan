@@ -303,6 +303,9 @@ singleton_implementation(RMXMPPTool)
     //3.更新用户的登录状态
     [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
     
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
+    [UIApplication sharedApplication].keyWindow.rootViewController = storyBoard.instantiateInitialViewController;
+    
 }
 
 //处理加好友

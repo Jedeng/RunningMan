@@ -39,7 +39,7 @@
     label.font = [UIFont boldSystemFontOfSize:20];
     label.textColor = [UIColor purpleColor];
     label.numberOfLines = 0;
-    label.text = @"    这是WindManTeam创建以来第一次做得比较完整的项目,仅以此记录团队成员踏入IOS编程界。,我们劲量把用户体验做得最好。 FIGHTING, KEEP MOVING, DAY DAY UP.DO NOT LAZY,YOU ARE THE BEST";
+    label.text = @"    这是WindManTeam创建以来第一次做得比较完整的项目,仅以此记录团队成员踏入IOS编程界。,我们尽自己最大的努力把用户体验做得最好。 FIGHTING, KEEP MOVING, DAY DAY UP.DO NOT LAZY,YOU ARE THE BEST";
     [self.view addSubview:label];
 }
 
