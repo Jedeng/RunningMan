@@ -11,10 +11,10 @@
 #import "RMXMPPTool.h"
 #import "RMFriendCell.h"
 #import "UIImageView+RMRoundImageView.h"
-//#import "RMChatViewController.h"
+#import "RMChatViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "UIBarButtonItem+Item.h"
-
+#import "AddContactViewController.h"
 
 
 /** 结果控制器代理 */
@@ -128,6 +128,15 @@
         
         cell.nikeNameLabel.text = friend.jidStr;
     
+        if (!friend.ask)
+        {
+            cell.latestMsgLable.text = @"";
+        }
+        else
+        {
+            cell.latestMsgLable.text = friend.ask;
+        }
+    
         switch ([friend.sectionNum intValue])
         {
             case 0:
@@ -212,20 +221,22 @@
 }
 
 #pragma mark - 朋友界面与聊天界面之间跳转的正向传值
-//
-///* 选中谁和谁聊天 */
-//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    XMPPUserCoreDataStorageObject *roser = self.fetchController.fetchedObjects[indexPath.row];
-//    [self performSegueWithIdentifier:@"chatSegue" sender:roser.jid];
-//}
-///* 把好友的jid传入下一个控制器 */
-//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    id vc = segue.destinationViewController;
-//    if ([vc isKindOfClass:[RMChatViewController class]]) {
-//        RMChatViewController *chatVc = (RMChatViewController *)vc;
-//        chatVc.friendJid = sender;
-//    }
-//}
+
+/* 选中谁和谁聊天 */
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XMPPUserCoreDataStorageObject *roser = self.fetchController.fetchedObjects[indexPath.row];
+    [self performSegueWithIdentifier:@"chatSegue" sender:roser.jid];
+}
+/* 把好友的jid传入下一个控制器 */
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    id vc = segue.destinationViewController;
+    if ([vc isKindOfClass:[RMChatViewController class]])
+    {
+        RMChatViewController *chatVc = (RMChatViewController *)vc;
+        chatVc.friendJid = sender;
+        self.hidesBottomBarWhenPushed = YES;
+    }
+}
 @end
