@@ -303,11 +303,6 @@ singleton_implementation(RMXMPPTool)
     //3.更新用户的登录状态
     [[RMUserInfo sharedRMUserInfo] saveUserInfoToSandbox];
     
-    // 4. 回到登录界面
-    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [mainSB instantiateInitialViewController];
-    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-    
 }
 
 //处理加好友
@@ -319,14 +314,15 @@ singleton_implementation(RMXMPPTool)
     NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]];
     //请求的用户
     NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
-    NSLog(@"-----presenceType:%@",presenceType);
     
-    NSLog(@"-----presence2:%@  sender2:%@",presence,sender);
-    NSLog(@"-----fromUser:%@",presenceFromUser);
+    MYLog(@"-----presenceType:%@",presenceType);
+    MYLog(@"-----presence2:%@  sender2:%@",presence,sender);
+    MYLog(@"-----fromUser:%@",presenceFromUser);
+    
     NSString *jidStr = [NSString stringWithFormat:@"%@@%@",presenceFromUser,RMXMPPDOMAIN];
-    XMPPJID *jid = [XMPPJID jidWithString:jidStr];
-    self.fJid = jid;
-    NSString *title = [NSString stringWithFormat:@"%@想申请加好友",jidStr];
+    XMPPJID *jid     = [XMPPJID jidWithString:jidStr];
+    self.fJid              = jid;
+    NSString *title    = [NSString stringWithFormat:@"%@想申请加好友",jidStr];
     UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle: title
                                                                                         delegate: self
                                                                          cancelButtonTitle: @"取消"
@@ -343,27 +339,36 @@ singleton_implementation(RMXMPPTool)
     NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]];
     //请求的用户
     NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
-    NSLog(@"-----presenceType:%@",presenceType);
+
+    MYLog(@"-----presenceType:%@",presenceType);
+    MYLog(@"-----presence2:%@  sender2:%@",presence,sender);
+    MYLog(@"-----fromUser:%@",presenceFromUser);
     
-    NSLog(@"-----presence2:%@  sender2:%@",presence,sender);
-    NSLog(@"-----fromUser:%@",presenceFromUser);
     NSString *jidStr = [NSString stringWithFormat:@"%@@%@",presenceFromUser,RMXMPPDOMAIN];
-    XMPPJID *jid = [XMPPJID jidWithString:jidStr];
-    self.fJid = jid;
-    UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat:@"%@想申请加好友",jidStr] delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"同意" otherButtonTitles:@"同意并添加对方为好友", nil];
+    XMPPJID *jid     = [XMPPJID jidWithString:jidStr];
+    self.fJid              = jid;
+    UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle: [NSString stringWithFormat:@"%@想申请加好友",jidStr]
+                                                                                        delegate: self
+                                                                         cancelButtonTitle: @"取消"
+                                                                  destructiveButtonTitle: @"同意"
+                                                                          otherButtonTitles: @"同意并添加对方为好友", nil];
     
     [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
-    
     
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"index====%ld",buttonIndex);
-    if (0 == buttonIndex) {
+    MYLog(@"index====%ld",buttonIndex);
+    if (0 == buttonIndex)
+    {
         [self.xmppRoster acceptPresenceSubscriptionRequestFrom:self.fJid andAddToRoster:NO];
-    }else if(1== buttonIndex){
+    }
+    else if(1== buttonIndex)
+    {
         [self.xmppRoster acceptPresenceSubscriptionRequestFrom:self.fJid andAddToRoster:YES];
-    }else{
+    }
+    else
+    {
         [self.xmppRoster  rejectPresenceSubscriptionRequestFrom:self.fJid];
     }
 }

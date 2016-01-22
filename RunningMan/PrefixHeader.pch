@@ -13,7 +13,7 @@
 
 /** XMPP 工具类中需要的相关宏 */
 #import <UIKit/UIKit.h>
-#define     RMXMPPDOMAIN           @"tarena.com"
+#define     RMXMPPDOMAIN           @"arena.com"
 
 //#define     RMXMPPHOSTNAME      @"124.207.192.18"
 #define     RMXMPPHOSTNAME      @"127.0.0.1"

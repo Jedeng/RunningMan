@@ -8,6 +8,8 @@
 
 #import "RMSettingTableVC.h"
 #import "RMSetMyProfilesVC.h"
+#import "RMAboutUsVC.h"
+
 
 @interface RMSettingTableVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -85,7 +87,8 @@
     }
     else if(indexPath.section == 1 && indexPath.row == 2)
     {
-
+        RMAboutUsVC *aboutUS = [RMAboutUsVC new];
+        [self.navigationController pushViewController:aboutUS animated:YES];
     }
     //让点击状态自动消失
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

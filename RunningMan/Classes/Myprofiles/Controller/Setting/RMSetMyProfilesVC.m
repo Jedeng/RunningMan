@@ -19,7 +19,7 @@
 @implementation RMSetMyProfilesVC
 -(NSArray *)firstArr
 {
-    if (_firstArr)
+    if (!_firstArr)
     {
         _firstArr = @[@"昵称",@"性别",@"生日",@"邮箱"];
     }
@@ -27,7 +27,7 @@
 }
 - (NSArray *)secondArr
 {
-    if (_secondArr)
+    if (!_secondArr)
     {
         _secondArr = @[@"职业",@"公司",@"学校",@"故乡"];
     }
@@ -35,7 +35,7 @@
 }
 - (NSArray *)thirdArr
 {
-    if (_thirdArr)
+    if (!_thirdArr)
     {
         _thirdArr = @[@"个性签名"];
     }
@@ -83,8 +83,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RMSetMyPofilesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SetMyPofilesCell"];
-    
-    return cell;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (cell == nil) {
+        cell = [[RMSetMyPofilesTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"SetMyPofilesCell"];
+    }
+    if (indexPath.section == 0) {
+        cell.textLabel.text = self.firstArr[indexPath.row];
+    }
+    if (indexPath.section == 1) {
+        
+        cell.textLabel.text = self.secondArr[indexPath.row];
+    }
+    if (indexPath.section == 2) {
+        
+        cell.textLabel.text = self.thirdArr[indexPath.row];
+    }
+    return  cell;
 }
 
 /*
