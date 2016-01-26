@@ -41,7 +41,7 @@
 /* 从服务器上获取跑步数据 */
 - (void)  loadFromWebServerWithType:(enum SportType) type
 {
-    NSString *url = [NSString stringWithFormat:@"http://%@:8080/allRunServer/queryUserDataByType.jsp",
+    NSString *url = [NSString stringWithFormat:@"http://%@:8080/allRunServerNew/queryUserDataByType.jsp",
                                                                         RMXMPPHOSTNAME];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     

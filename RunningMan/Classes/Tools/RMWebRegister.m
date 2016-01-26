@@ -19,7 +19,7 @@ singleton_implementation(RMWebRegister);
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSString *baseUrl = [NSString stringWithFormat:@"http://%@:8080/allRunServer/register.jsp",RMXMPPHOSTNAME];
+    NSString *baseUrl = [NSString stringWithFormat:@"http://%@:8080/allRunServerNew/register.jsp",RMXMPPHOSTNAME];
     /**  准备参数 */
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"username"] = [RMUserInfo sharedRMUserInfo].registerName;

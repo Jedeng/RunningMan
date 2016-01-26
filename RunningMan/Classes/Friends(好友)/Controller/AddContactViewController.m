@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 - (IBAction)Check:(id)sender {
     NSString *jidStr = [NSString stringWithFormat:@"%@@%@",self.JidTextField.text,RMXMPPDOMAIN];
     XMPPJID  *jid = [XMPPJID jidWithString:jidStr];
@@ -38,9 +39,9 @@
     [[RMXMPPTool sharedRMXMPPTool].xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
       //  [self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popViewControllerAnimated:YES];
-
    
 }
+
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
