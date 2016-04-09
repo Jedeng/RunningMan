@@ -1,7 +1,9 @@
 # RunningMan
 
 ```
+just test
 
+juest test2
 
 这是一个全民健身软件;
 主要实现功能有
